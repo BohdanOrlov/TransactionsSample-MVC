@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37A2334D69D69F233D21BFA5 /* Pods_LootInterview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECB60FC5F420A3C0B396EDF /* Pods_LootInterview.framework */; };
 		B68ABB14212C08D0001D9125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB13212C08D0001D9125 /* AppDelegate.swift */; };
 		B68ABB16212C08D0001D9125 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB15212C08D0001D9125 /* ViewController.swift */; };
 		B68ABB19212C08D0001D9125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB17212C08D0001D9125 /* Main.storyboard */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3ECB60FC5F420A3C0B396EDF /* Pods_LootInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LootInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7CE71AB53D2E2A4B8BB42F4 /* Pods-LootInterview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterview.release.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview.release.xcconfig"; sourceTree = "<group>"; };
 		B68ABB10212C08D0001D9125 /* LootInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LootInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68ABB13212C08D0001D9125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68ABB15212C08D0001D9125 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		B68ABB2F212C08D1001D9125 /* LootInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LootInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68ABB33212C08D1001D9125 /* LootInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootInterviewUITests.swift; sourceTree = "<group>"; };
 		B68ABB35212C08D1001D9125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF52BA1F9D1276CBDB0E840B /* Pods-LootInterview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A2334D69D69F233D21BFA5 /* Pods_LootInterview.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37CC7550CFE09B4B5CDEDE35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF52BA1F9D1276CBDB0E840B /* Pods-LootInterview.debug.xcconfig */,
+				A7CE71AB53D2E2A4B8BB42F4 /* Pods-LootInterview.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		70EAA20257E1BDAED989A952 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3ECB60FC5F420A3C0B396EDF /* Pods_LootInterview.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B68ABB07212C08D0001D9125 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				B68ABB27212C08D1001D9125 /* LootInterviewTests */,
 				B68ABB32212C08D1001D9125 /* LootInterviewUITests */,
 				B68ABB11212C08D0001D9125 /* Products */,
+				37CC7550CFE09B4B5CDEDE35 /* Pods */,
+				70EAA20257E1BDAED989A952 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B68ABB38212C08D1001D9125 /* Build configuration list for PBXNativeTarget "LootInterview" */;
 			buildPhases = (
+				03170BFE1991BA87EC9ACC8F /* [CP] Check Pods Manifest.lock */,
 				B68ABB0C212C08D0001D9125 /* Sources */,
 				B68ABB0D212C08D0001D9125 /* Frameworks */,
 				B68ABB0E212C08D0001D9125 /* Resources */,
+				FA798486BEC369D33D7ECC14 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +276,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03170BFE1991BA87EC9ACC8F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LootInterview-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA798486BEC369D33D7ECC14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B68ABB0C212C08D0001D9125 /* Sources */ = {
@@ -428,6 +511,7 @@
 		};
 		B68ABB39212C08D1001D9125 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF52BA1F9D1276CBDB0E840B /* Pods-LootInterview.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +529,7 @@
 		};
 		B68ABB3A212C08D1001D9125 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7CE71AB53D2E2A4B8BB42F4 /* Pods-LootInterview.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
