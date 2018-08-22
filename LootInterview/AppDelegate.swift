@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let get = LootAPI.getTransactions
+        
+        _ = APIManager.loot.requestArray(Transaction.self, endpoint: get, completion: { (result) in
+            switch result {
+            case let .success(array):
+                print(array)
+            case let .failure(error):
+                print(error)
+            }
+        })
+        
+        
         return true
     }
 
