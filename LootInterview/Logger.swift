@@ -2,8 +2,8 @@
 //  Logger.swift
 //  GreyHands
 //
-//  Created by Tom Angistalis on 15/11/2016.
-//  Copyright © 2016 Sourcebits. All rights reserved.
+//  Created by Thomas Angistalis on 22/08/2018.
+//  Copyright © 2018 Thomas Angistalis. All rights reserved.
 //
 
 import Foundation

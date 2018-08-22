@@ -9,6 +9,10 @@
 import Foundation
 import MapKit
 
+struct Entry {
+    
+}
+
 struct Location: Codable, Equatable {
     var latitude: Double?
     var longitude: Double?
@@ -26,9 +30,9 @@ struct Location: Codable, Equatable {
 
 struct Transaction: Codable, Equatable {
     
-    var amount: Int
+    var amount: Float
     var description: String
-    var postTransactionBalance: Int
+    var postTransactionBalance: Float
     var settlementDate: Date
     var authorisationDate: Date
     
@@ -38,13 +42,13 @@ struct Transaction: Codable, Equatable {
         let map = try decoder.container(keyedBy: CodingKeys.self)
         
         if let amountString = try? map.decode(String.self, forKey: .amount) {
-            amount = Int(amountString) ?? 0
+            amount = Float(amountString) ?? 0
         } else {
             amount = 0
         }
         
         if let postTransactionBalanceString = try? map.decode(String.self, forKey: .postTransactionBalance) {
-            postTransactionBalance = Int(postTransactionBalanceString) ?? 0
+            postTransactionBalance = Float(postTransactionBalanceString) ?? 0
         } else {
             postTransactionBalance = 0
         }
@@ -57,6 +61,24 @@ struct Transaction: Codable, Equatable {
 }
 
 extension Transaction {
+    public static let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_GB")
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 0
+        
+        return formatter
+    }()
+    
+    public static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        
+        return formatter
+    }()
+    
     var coordinates: CLLocationCoordinate2D? {
         guard let latitude = location?.latitude else { return nil }
         guard let longitude = location?.longitude else { return nil }
