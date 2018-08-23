@@ -15,7 +15,7 @@ extension UITableView {
      - parameter identifier: Name of the reusable cell identifier.
      - returns: Returns the table view cell.
      */
-    public subscript(indexPath: IndexPath, reuseIdentifier: String) -> UITableViewCell {
+    subscript(indexPath: IndexPath, reuseIdentifier: String) -> UITableViewCell {
         return self.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
     }
     
@@ -51,7 +51,7 @@ public protocol NibReusable: Reusable {
 }
 
 extension NibReusable {
-    public static var nib: UINib {
+    static var nib: UINib {
         return UINib(nibName: String(describing: Self.self), bundle: nil)
     }
 }

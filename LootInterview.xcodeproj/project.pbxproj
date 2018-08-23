@@ -44,6 +44,18 @@
 		B68ABB67212DB0F2001D9125 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB66212DB0F2001D9125 /* PaddingLabel.swift */; };
 		B68ABB68212DB0F2001D9125 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB66212DB0F2001D9125 /* PaddingLabel.swift */; };
 		B68ABB69212DB0F2001D9125 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB66212DB0F2001D9125 /* PaddingLabel.swift */; };
+		B68ABB6C212E950B001D9125 /* TransactionsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB6A212E950B001D9125 /* TransactionsListHeaderView.swift */; };
+		B68ABB6D212E950B001D9125 /* TransactionsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB6A212E950B001D9125 /* TransactionsListHeaderView.swift */; };
+		B68ABB6E212E950B001D9125 /* TransactionsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB6A212E950B001D9125 /* TransactionsListHeaderView.swift */; };
+		B68ABB6F212E950B001D9125 /* TransactionsListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB6B212E950B001D9125 /* TransactionsListHeaderView.xib */; };
+		B68ABB70212E950B001D9125 /* TransactionsListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB6B212E950B001D9125 /* TransactionsListHeaderView.xib */; };
+		B68ABB71212E950B001D9125 /* TransactionsListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB6B212E950B001D9125 /* TransactionsListHeaderView.xib */; };
+		B6E23215212EB74A00A74FF4 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23214212EB74A00A74FF4 /* BalanceView.swift */; };
+		B6E23216212EB74A00A74FF4 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23214212EB74A00A74FF4 /* BalanceView.swift */; };
+		B6E23217212EB74A00A74FF4 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23214212EB74A00A74FF4 /* BalanceView.swift */; };
+		B6E23219212EB94F00A74FF4 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23218212EB94F00A74FF4 /* TransactionsViewController.swift */; };
+		B6E2321A212EB94F00A74FF4 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23218212EB94F00A74FF4 /* TransactionsViewController.swift */; };
+		B6E2321B212EB94F00A74FF4 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23218212EB94F00A74FF4 /* TransactionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +106,10 @@
 		B68ABB5D212D7AC3001D9125 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		B68ABB62212DAB17001D9125 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		B68ABB66212DB0F2001D9125 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		B68ABB6A212E950B001D9125 /* TransactionsListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListHeaderView.swift; sourceTree = "<group>"; };
+		B68ABB6B212E950B001D9125 /* TransactionsListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsListHeaderView.xib; sourceTree = "<group>"; };
+		B6E23214212EB74A00A74FF4 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		B6E23218212EB94F00A74FF4 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		FF52BA1F9D1276CBDB0E840B /* Pods-LootInterview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,9 +250,8 @@
 		B68ABB54212D5D21001D9125 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */,
-				B68ABB55212D7909001D9125 /* TransactionsDataSource.swift */,
-				B68ABB59212D79F6001D9125 /* TransactionTableViewCell.swift */,
+				B6E2321C212EB95600A74FF4 /* Transaction Details */,
+				B68ABB72212E9515001D9125 /* Transactions List */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -248,6 +263,27 @@
 				B68ABB62212DAB17001D9125 /* UIView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B68ABB72212E9515001D9125 /* Transactions List */ = {
+			isa = PBXGroup;
+			children = (
+				B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */,
+				B68ABB55212D7909001D9125 /* TransactionsDataSource.swift */,
+				B68ABB59212D79F6001D9125 /* TransactionTableViewCell.swift */,
+				B68ABB6A212E950B001D9125 /* TransactionsListHeaderView.swift */,
+				B68ABB6B212E950B001D9125 /* TransactionsListHeaderView.xib */,
+				B6E23214212EB74A00A74FF4 /* BalanceView.swift */,
+			);
+			path = "Transactions List";
+			sourceTree = "<group>";
+		};
+		B6E2321C212EB95600A74FF4 /* Transaction Details */ = {
+			isa = PBXGroup;
+			children = (
+				B6E23218212EB94F00A74FF4 /* TransactionsViewController.swift */,
+			);
+			path = "Transaction Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68ABB6F212E950B001D9125 /* TransactionsListHeaderView.xib in Resources */,
 				B68ABB1E212C08D1001D9125 /* LaunchScreen.storyboard in Resources */,
 				B68ABB1B212C08D1001D9125 /* Assets.xcassets in Resources */,
 				B68ABB19212C08D0001D9125 /* Main.storyboard in Resources */,
@@ -368,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68ABB70212E950B001D9125 /* TransactionsListHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68ABB71212E950B001D9125 /* TransactionsListHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +509,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E23219212EB94F00A74FF4 /* TransactionsViewController.swift in Sources */,
+				B68ABB6C212E950B001D9125 /* TransactionsListHeaderView.swift in Sources */,
 				B68ABB63212DAB17001D9125 /* UIView.swift in Sources */,
 				B68ABB5E212D7AC3001D9125 /* UITableView.swift in Sources */,
 				B68ABB4B212C1DB8001D9125 /* Logger.swift in Sources */,
@@ -481,6 +522,7 @@
 				B68ABB14212C08D0001D9125 /* AppDelegate.swift in Sources */,
 				B68ABB43212C1984001D9125 /* LootAPI.swift in Sources */,
 				B68ABB67212DB0F2001D9125 /* PaddingLabel.swift in Sources */,
+				B6E23215212EB74A00A74FF4 /* BalanceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,9 +535,12 @@
 				B68ABB57212D7909001D9125 /* TransactionsDataSource.swift in Sources */,
 				B68ABB44212C1984001D9125 /* LootAPI.swift in Sources */,
 				B68ABB29212C08D1001D9125 /* LootInterviewTests.swift in Sources */,
+				B6E2321A212EB94F00A74FF4 /* TransactionsViewController.swift in Sources */,
 				B68ABB4C212C1DB8001D9125 /* Logger.swift in Sources */,
 				B68ABB68212DB0F2001D9125 /* PaddingLabel.swift in Sources */,
 				B68ABB50212C2016001D9125 /* Transaction.swift in Sources */,
+				B68ABB6D212E950B001D9125 /* TransactionsListHeaderView.swift in Sources */,
+				B6E23216212EB74A00A74FF4 /* BalanceView.swift in Sources */,
 				B68ABB64212DAB17001D9125 /* UIView.swift in Sources */,
 				B68ABB5F212D7AC3001D9125 /* UITableView.swift in Sources */,
 			);
@@ -510,9 +555,12 @@
 				B68ABB58212D7909001D9125 /* TransactionsDataSource.swift in Sources */,
 				B68ABB45212C1984001D9125 /* LootAPI.swift in Sources */,
 				B68ABB34212C08D1001D9125 /* LootInterviewUITests.swift in Sources */,
+				B6E2321B212EB94F00A74FF4 /* TransactionsViewController.swift in Sources */,
 				B68ABB4D212C1DB8001D9125 /* Logger.swift in Sources */,
 				B68ABB69212DB0F2001D9125 /* PaddingLabel.swift in Sources */,
 				B68ABB51212C2016001D9125 /* Transaction.swift in Sources */,
+				B68ABB6E212E950B001D9125 /* TransactionsListHeaderView.swift in Sources */,
+				B6E23217212EB74A00A74FF4 /* BalanceView.swift in Sources */,
 				B68ABB65212DAB17001D9125 /* UIView.swift in Sources */,
 				B68ABB60212D7AC3001D9125 /* UITableView.swift in Sources */,
 			);

@@ -26,7 +26,7 @@ public extension Loggable {
         log(level: level, message: message)
     }
 
-    func log(level: LogLevel, message: @autoclosure () -> Any) {
+    func log(level: LogLevel, message: @escaping @autoclosure () -> Any) {
         Logger.log(level: level, message: message)
     }
 }
@@ -51,7 +51,7 @@ final class Logger {
 
     }
 
-    public static func log(level: LogLevel = .verbose, message: @autoclosure () -> Any) {
+    public static func log(level: LogLevel = .verbose, message: @escaping @autoclosure () -> Any) {
         switch level {
         case .verbose:
             print(message)
@@ -62,24 +62,23 @@ final class Logger {
         case .warning:
             print(message)
         case .error:
-
             print(message)
         }
     }
 
-    public static func verbose(_ message: @autoclosure () -> Any) {
+    public static func verbose(_ message: @escaping @autoclosure () -> Any) {
         Logger.log(level: .verbose, message: message)
     }
 
-    public static func debug(_ message: @autoclosure () -> Any) {
+    public static func debug(_ message: @escaping @autoclosure () -> Any) {
         Logger.log(level: .debug, message: message)
     }
 
-    public static func info(_ message: @autoclosure () -> Any) {
+    public static func info(_ message: @escaping @autoclosure () -> Any) {
         Logger.log(level: .info, message: message)
     }
 
-    public static func warning(_ message: @autoclosure () -> Any) {
+    public static func warning(_ message: @escaping @autoclosure () -> Any) {
         Logger.log(level: .warning, message: message)
     }
 

@@ -10,11 +10,21 @@ import UIKit
 
 class TransactionsDataSource: NSObject, UITableViewDataSource {
     // MARK: - Internal Properties
-    var items: [Transaction] = []
+    fileprivate var items: [Transaction] = []
     
     // MARK: - Lifecycle
     init(array: [Transaction]) {
         items = array.sorted(by: { $0.authorisationDate > $1.authorisationDate })
+    }
+    
+    var numberOfItems: Int {
+        return items.count
+    }
+    
+    func item(at index: Int) -> Transaction? {
+        guard index >= 0, index < items.count else { return nil }
+        
+        return items[index]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,4 +40,6 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         
         return cell
     }
+    
+    
 }

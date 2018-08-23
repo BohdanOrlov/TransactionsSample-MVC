@@ -32,7 +32,7 @@ class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell {
         setAmount(with: item.amount)
     }
     
-    func setAmount(with number: Float) {
+    fileprivate func setAmount(with number: Float) {
         ibAmountLabel.text = Transaction.numberFormatter.string(from: number as NSNumber)
         
         ibAmountLabel.textColor = number > 0 ? .white : .black
