@@ -5,6 +5,8 @@ def common_pods
   pod 'Moya', '~> 11.0'
   pod 'RealmSwift'
   pod 'SwiftDate', '~> 5.0'
+  pod 'DZNEmptyDataSet'
+  pod 'ScrollableGraphView'
 end
 
 target 'LootInterview' do
