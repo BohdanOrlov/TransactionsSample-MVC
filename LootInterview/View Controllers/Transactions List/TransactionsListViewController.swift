@@ -77,5 +77,11 @@ extension TransactionsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let item = dataSource.item(at: indexPath.row)
+        
+        let controller = UIStoryboard.main.transactionDetails
+        controller.transaction = item
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

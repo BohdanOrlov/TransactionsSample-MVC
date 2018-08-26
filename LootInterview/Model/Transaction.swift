@@ -38,6 +38,10 @@ struct Transaction: Codable, Equatable {
     
     var location: Location?
     
+    var statusLabel: String {
+        return "Completed"
+    }
+    
     init(from decoder: Decoder) throws {
         let map = try decoder.container(keyedBy: CodingKeys.self)
         

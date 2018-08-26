@@ -40,6 +40,4 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
