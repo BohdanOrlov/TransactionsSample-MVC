@@ -11,17 +11,30 @@ import RealmSwift
 
 class TransactionsDataSource: NSObject, UITableViewDataSource {
     // MARK: - Internal Properties
+    var categoryFilterType: TransactionCategory? {
+        didSet {
+            self.reload()
+        }
+    }
     
-    fileprivate var items: Results<Group>!
+    var items: Results<Group>!
     
     // MARK: - Lifecycle
 
     override init() {
         super.init()
         
+        reload()
+    }
+    
+    func reload() {
         let realm = try! Realm()
         
-        items = realm.objects(Group.self).sorted(byKeyPath: "absoluteDate", ascending: false)
+        if let filter = categoryFilterType {
+            items = realm.objects(Group.self).filter("ANY models.category = \(filter.rawValue)").sorted(byKeyPath: "absoluteDate", ascending: false)
+        } else {
+            items = realm.objects(Group.self).sorted(byKeyPath: "absoluteDate", ascending: false)
+        }
     }
     
     // MARK: - Helpers
@@ -35,7 +48,11 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
     }
     
     func transaction(at indexPath: IndexPath) -> Transaction? {
+        guard items.count > 0, indexPath.section < items.count else { return nil }
+        
         let group = items[indexPath.section]
+        
+        guard group.models.count > 0, indexPath.row < group.models.count else { return nil }
         
         return group.models[indexPath.row]
     }

@@ -16,6 +16,8 @@ class TransactionsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var balanceView: BalanceView!
     @IBOutlet weak var graphView: ScrollableGraphView!
+    @IBOutlet weak var graphViewContainer: UIView!
+    @IBOutlet weak var filterButton: UIButton!
     
     var dataSource: TransactionsDataSource!
     
@@ -24,7 +26,6 @@ class TransactionsListViewController: UIViewController {
     var isLoading = true
     
     fileprivate func setupGraphView() {
-        graphView.dataSource = self
         
         let linePlot = LinePlot(identifier: "balance")
         linePlot.lineColor = UIColor.flatSkyBlue
@@ -44,11 +45,13 @@ class TransactionsListViewController: UIViewController {
         graphView.addReferenceLines(referenceLines: referenceLines)
         
         graphView.shouldAdaptRange = true
+        graphView.shouldAnimateOnAdapt = true
         graphView.shouldRangeAlwaysStartAtZero = true
         graphView.dataPointSpacing = 80
         graphView.direction = .rightToLeft
         
-        graphView.reload()
+        graphView.dataSource = self
+        
     }
     
     fileprivate func setupUI() {
@@ -80,33 +83,90 @@ class TransactionsListViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    func reloadDataSource() {
-        self.dataSource = TransactionsDataSource()
-        self.tableView.dataSource = self.dataSource
-        self.tableView.reloadData()
-        self.balanceView.isHidden = false
+    func reloadDataSource(filter: TransactionCategory? = nil) {
+        isLoading = false
         
-        if let first = self.dataSource.transaction(at: IndexPath(row: 0, section: 0)) {
-            self.balanceView.setBalance(with: first.postTransactionBalance)
-        }
+        dataSource = TransactionsDataSource()
+        dataSource.categoryFilterType = filter
+        
+        tableView.dataSource = self.dataSource
+        tableView.reloadData()
+        balanceView.isHidden = false
         
         let realm = try! Realm()
         
-        self.balancePoints = realm.objects(Group.self).flatMap({ $0.models }).sorted(by: { (t1, t2) -> Bool in
+        if let first = realm.objects(Group.self).flatMap({ $0.models }).sorted(by: { (t1, t2) -> Bool in
+            t1.settlementDate > t2.settlementDate
+        }).first {
+            self.balanceView.setBalance(with: first.postTransactionBalance)
+        }
+        
+        balancePoints = dataSource.items.flatMap({ $0.models }).sorted(by: { (t1, t2) -> Bool in
             t1.settlementDate < t2.settlementDate
         })
         
-        graphView.reload()
+        let graphView2 = ScrollableGraphView(frame: graphViewContainer.bounds)
+        
+        graphView.removeFromSuperview()
+        self.graphView = graphView2
+        
+        graphViewContainer.addSubview(graphView)
+        
+        setupGraphView()
+        
+        if filter == nil {
+            filterButton.setTitle("Filter", for: .normal)
+        } else {
+            filterButton.setTitle("Filter (1)", for: .normal)
+        }
     }
 
     func loadTransactions() {
         _ = APIManager.loot.loadTransactions(completion: { [weak self] (success) in
             guard let `self` = self else { return }
             
+            self.isLoading = false
+            
             if success {
                 self.reloadDataSource()
             }
         })
+    }
+    
+    func showFilterOptions() {
+        let alert = UIAlertController(title: nil, message: "Filter by...", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "All", style: .default, handler: { (action) in
+            self.reloadDataSource()
+        }))
+        
+        alert.addAction(UIAlertAction(title: TransactionCategory.general.description, style: .default, handler: { (action) in
+            self.reloadDataSource(filter: .general)
+        }))
+        
+        alert.addAction(UIAlertAction(title: TransactionCategory.utilities.description, style: .default, handler: { (action) in
+            self.reloadDataSource(filter: .utilities)
+        }))
+        
+        alert.addAction(UIAlertAction(title: TransactionCategory.shopping.description, style: .default, handler: { (action) in
+            self.reloadDataSource(filter: .shopping)
+        }))
+        
+        alert.addAction(UIAlertAction(title: TransactionCategory.transfer.description, style: .default, handler: { (action) in
+            self.reloadDataSource(filter: .transfer)
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        showFilterOptions()
+    }
+    
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        
     }
 }
 
@@ -146,6 +206,8 @@ extension TransactionsListViewController: ScrollableGraphViewDataSource {
         // Return the data for each plot.
         switch(plot.identifier) {
         case "balance":
+            guard balancePoints.count > 0, pointIndex < balancePoints.count else { return 0 }
+            
             let item = balancePoints[pointIndex]
             
             return Double(item.postTransactionBalance)
@@ -155,6 +217,8 @@ extension TransactionsListViewController: ScrollableGraphViewDataSource {
     }
     
     func label(atIndex pointIndex: Int) -> String {
+        guard balancePoints.count > 0, pointIndex < balancePoints.count else { return "" }
+        
         let transaction = balancePoints[pointIndex]
         
         let date = transaction.settlementDate

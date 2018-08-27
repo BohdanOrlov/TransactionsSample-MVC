@@ -17,6 +17,8 @@ class TransactionDetailHeaderTableViewCell: UITableViewCell, Reusable, Configura
     @IBOutlet weak var ibDateLabel: UILabel!
     @IBOutlet weak var ibImageView: UIImageView!
     
+    @IBOutlet weak var ibCategoryLabel: PaddingLabel!
+    
     @IBOutlet weak var ibAmountLabel: UILabel!
     @IBOutlet weak var ibDescriptionLabel: UILabel!
     
@@ -24,6 +26,12 @@ class TransactionDetailHeaderTableViewCell: UITableViewCell, Reusable, Configura
         super.awakeFromNib()
         // Initialization code
         ibImageView.backgroundColor = UIColor(randomFlatColorOf: .light, withAlpha: 1.0)
+        
+        let color = UIColor.flatSkyBlue
+        ibCategoryLabel.textColor = color
+        
+        ibCategoryLabel.layer.borderColor = color.cgColor
+        ibCategoryLabel.layer.borderWidth = 1.0
     }
 
     func configure(with item: Transaction, at indexPath: IndexPath) {
@@ -33,5 +41,6 @@ class TransactionDetailHeaderTableViewCell: UITableViewCell, Reusable, Configura
         ibAmountLabel.text = Transaction.numberFormatter.string(from: item.amount as NSNumber)
         ibDescriptionLabel.text = item.descriptionString
         
+        ibCategoryLabel.text = item.categoryType.description.capitalized
     }
 }

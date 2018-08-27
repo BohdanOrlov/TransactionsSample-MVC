@@ -26,6 +26,26 @@ class Location: RealmSwift.Object, Codable {
     }
 }
 
+enum TransactionCategory: Int, CustomStringConvertible {
+    case general = 0
+    case shopping
+    case utilities
+    case transfer
+    
+    public var description: String {
+        switch self {
+        case .transfer:
+            return "Transfers"
+        case .shopping:
+            return "Shopping"
+        case .utilities:
+            return "Utilities"
+        default:
+            return "General"
+        }
+    }
+}
+
 class Transaction: RealmSwift.Object, Codable {
     
     @objc dynamic var amount: Float = 0
@@ -35,6 +55,12 @@ class Transaction: RealmSwift.Object, Codable {
     @objc dynamic var authorisationDate: Date = Date.init(timeIntervalSinceReferenceDate: 0)
     
     @objc dynamic var location: Location?
+    
+    @objc dynamic var category: Int = 0
+    
+    var categoryType: TransactionCategory {
+        return TransactionCategory(rawValue: category) ?? .general
+    }
     
     var statusLabel: String {
         return "Completed"
@@ -66,6 +92,12 @@ class Transaction: RealmSwift.Object, Codable {
         settlementDate = try map.decode(Date.self, forKey: .settlementDate)
         authorisationDate = try map.decode(Date.self, forKey: .authorisationDate)
         location = try map.decodeIfPresent(Location.self, forKey: .location)
+        
+        if descriptionString.hasPrefix("From") {
+            category = 3
+        } else {
+            category = Int(arc4random_uniform(UInt32(2)))
+        }
     }
 }
 
