@@ -357,7 +357,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B68ABB0B212C08D0001D9125 /* Build configuration list for PBXProject "LootInterview" */;
+			buildConfigurationList = B68ABB0B212C08D0001D9125 /* Build configuration list for PBXProject "TransactionsSample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -468,6 +468,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -479,6 +480,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -808,7 +810,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B68ABB0B212C08D0001D9125 /* Build configuration list for PBXProject "LootInterview" */ = {
+		B68ABB0B212C08D0001D9125 /* Build configuration list for PBXProject "TransactionsSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B68ABB36212C08D1001D9125 /* Debug */,

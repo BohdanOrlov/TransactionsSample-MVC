@@ -7,6 +7,7 @@ def common_pods
   pod 'SwiftDate', '~> 5.0'
   pod 'DZNEmptyDataSet'
   pod 'ScrollableGraphView'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/viccalexander/Chameleon.git', :branch => 'wip/swift4'
 end
 
 target 'LootInterview' do

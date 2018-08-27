@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:LootInterview.xcodeproj">
+      location = "group:/Users/tomangistalis/Development/repositories/interviews/LootInterview/TransactionsSample.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

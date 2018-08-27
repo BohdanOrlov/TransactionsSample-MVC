@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftDate
+import ChameleonFramework
 
 class TransactionDetailHeaderTableViewCell: UITableViewCell, Reusable, ConfigurableCell  {
     typealias T = Transaction
@@ -18,11 +19,11 @@ class TransactionDetailHeaderTableViewCell: UITableViewCell, Reusable, Configura
     
     @IBOutlet weak var ibAmountLabel: UILabel!
     @IBOutlet weak var ibDescriptionLabel: UILabel!
-    @IBOutlet weak var ibNoteLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        ibImageView.backgroundColor = UIColor(randomFlatColorOf: .light, withAlpha: 1.0)
     }
 
     func configure(with item: Transaction, at indexPath: IndexPath) {

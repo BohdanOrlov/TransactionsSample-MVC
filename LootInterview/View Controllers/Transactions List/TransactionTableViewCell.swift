@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell {
     typealias T = Transaction
@@ -23,6 +24,7 @@ class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell {
         super.awakeFromNib()
         // Initialization code
         ibAmountLabel.cornerRadius = 5
+        ibImageView.backgroundColor = UIColor(randomFlatColorOf: .light, withAlpha: 1.0)
     }
 
     func configure(with item: Transaction, at indexPath: IndexPath) {

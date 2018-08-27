@@ -28,6 +28,10 @@ class MapPreviewTableViewCell: UITableViewCell, Reusable, ConfigurableCell  {
     
     func configure(with item: Transaction, at indexPath: IndexPath) {
         if let coordinates = item.coordinates {
+            let newPin = MKPointAnnotation()
+            newPin.coordinate = coordinates
+            ibMapView.addAnnotation(newPin)
+            
             let region = ibMapView.regionThatFits(MKCoordinateRegionMakeWithDistance(coordinates, 1000, 1000))
             ibMapView.setRegion(region, animated: true)
             

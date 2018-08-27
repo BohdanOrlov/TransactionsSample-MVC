@@ -214,21 +214,15 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s3-qg-jZP">
-                                                                    <rect key="frame" x="152" y="70" width="71.5" height="96.5"/>
+                                                                    <rect key="frame" x="152" y="70" width="71.5" height="124.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4j-Bc-7mg">
-                                                                    <rect key="frame" x="166.5" y="176.5" width="42" height="20.5"/>
+                                                                    <rect key="frame" x="166.5" y="204.5" width="42" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Add Note" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qq-a4-dJ7">
-                                                                    <rect key="frame" x="155.5" y="207" width="64.5" height="18"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -248,7 +242,6 @@
                                             <outlet property="ibDateLabel" destination="JOv-o2-9XP" id="jMA-1v-PbQ"/>
                                             <outlet property="ibDescriptionLabel" destination="l4j-Bc-7mg" id="tDs-2B-1c1"/>
                                             <outlet property="ibImageView" destination="9Qf-y6-xLm" id="LbN-YP-BMa"/>
-                                            <outlet property="ibNoteLabel" destination="0Qq-a4-dJ7" id="BhO-5H-dv5"/>
                                             <outlet property="ibStatusLabel" destination="zMC-aK-e1m" id="3Kp-7z-atm"/>
                                         </connections>
                                     </tableViewCell>
