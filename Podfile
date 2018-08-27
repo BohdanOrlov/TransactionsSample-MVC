@@ -10,16 +10,16 @@ def common_pods
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/viccalexander/Chameleon.git', :branch => 'wip/swift4'
 end
 
-target 'LootInterview' do
+target 'TransactionsSample' do
 
   common_pods
   
-  target 'LootInterviewTests' do
+  target 'TransactionsSampleTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'LootInterviewUITests' do
+  target 'TransactionsSampleUITests' do
     inherit! :search_paths
     # Pods for testing
   end

@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37A2334D69D69F233D21BFA5 /* Pods_LootInterview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ECB60FC5F420A3C0B396EDF /* Pods_LootInterview.framework */; };
-		81FE60C45A425D9AB96809E9 /* Pods_LootInterviewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A5B0635B7A068A1C5302B3 /* Pods_LootInterviewTests.framework */; };
-		861A7C8B6D8251A33988F799 /* Pods_LootInterviewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4272E5892867E95172EB0278 /* Pods_LootInterviewUITests.framework */; };
+		120D9BF1A7BB49C487B2D690 /* Pods_TransactionsSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28D9F69D9679228D36CE51B /* Pods_TransactionsSample.framework */; };
+		13AC6FF582452C5B174C01CD /* Pods_TransactionsSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA41D787028790C8FE7592D /* Pods_TransactionsSampleUITests.framework */; };
 		B63A970C2132AEA300EF162F /* MapPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A970B2132AEA300EF162F /* MapPreviewTableViewCell.swift */; };
 		B68ABB14212C08D0001D9125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB13212C08D0001D9125 /* AppDelegate.swift */; };
 		B68ABB16212C08D0001D9125 /* TransactionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */; };
 		B68ABB19212C08D0001D9125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB17212C08D0001D9125 /* Main.storyboard */; };
 		B68ABB1B212C08D1001D9125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB1A212C08D1001D9125 /* Assets.xcassets */; };
 		B68ABB1E212C08D1001D9125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB1C212C08D1001D9125 /* LaunchScreen.storyboard */; };
-		B68ABB29212C08D1001D9125 /* LootInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB28212C08D1001D9125 /* LootInterviewTests.swift */; };
-		B68ABB34212C08D1001D9125 /* LootInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB33212C08D1001D9125 /* LootInterviewUITests.swift */; };
+		B68ABB29212C08D1001D9125 /* TransactionsSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB28212C08D1001D9125 /* TransactionsSampleTests.swift */; };
+		B68ABB34212C08D1001D9125 /* TransactionsSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB33212C08D1001D9125 /* TransactionsSampleUITests.swift */; };
 		B68ABB43212C1984001D9125 /* LootAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB42212C1984001D9125 /* LootAPI.swift */; };
 		B68ABB47212C1CED001D9125 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB46212C1CED001D9125 /* APIManager.swift */; };
 		B68ABB4B212C1DB8001D9125 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB4A212C1DB8001D9125 /* Logger.swift */; };
@@ -36,6 +35,7 @@
 		B6E2321E212ED31800A74FF4 /* TransactionsDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E2321D212ED31800A74FF4 /* TransactionsDetailsDataSource.swift */; };
 		B6E23222212ED58E00A74FF4 /* TransactionDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23221212ED58E00A74FF4 /* TransactionDetailHeaderTableViewCell.swift */; };
 		B6E23226212ED61800A74FF4 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E23225212ED61800A74FF4 /* UIStoryboard.swift */; };
+		F8FEC00BDDBF855824B87DB1 /* Pods_TransactionsSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D69DA044F7D1971737F73F9 /* Pods_TransactionsSampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,27 +56,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3ECB60FC5F420A3C0B396EDF /* Pods_LootInterview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LootInterview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4272E5892867E95172EB0278 /* Pods_LootInterviewUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LootInterviewUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55B99F6E4C96464FF193208E /* Pods-LootInterviewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterviewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterviewTests/Pods-LootInterviewTests.release.xcconfig"; sourceTree = "<group>"; };
-		5B937145D0AA2C8074AB238D /* Pods-LootInterviewUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterviewUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterviewUITests/Pods-LootInterviewUITests.release.xcconfig"; sourceTree = "<group>"; };
-		64D4E7D6ABA6267EE36E93CB /* Pods-LootInterviewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterviewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterviewUITests/Pods-LootInterviewUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7AA76B71D8DD117B64102759 /* Pods-LootInterviewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterviewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterviewTests/Pods-LootInterviewTests.debug.xcconfig"; sourceTree = "<group>"; };
-		93A5B0635B7A068A1C5302B3 /* Pods_LootInterviewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LootInterviewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7CE71AB53D2E2A4B8BB42F4 /* Pods-LootInterview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterview.release.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview.release.xcconfig"; sourceTree = "<group>"; };
+		0E35677802F08651BB6ABF12 /* Pods-TransactionsSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSample/Pods-TransactionsSample.debug.xcconfig"; sourceTree = "<group>"; };
+		14A7276D2195F8A3385B9623 /* Pods-TransactionsSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSample/Pods-TransactionsSample.release.xcconfig"; sourceTree = "<group>"; };
+		159959FEA940BC0DD9FCF4C6 /* Pods-TransactionsSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSampleTests/Pods-TransactionsSampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		3D69DA044F7D1971737F73F9 /* Pods_TransactionsSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransactionsSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA41D787028790C8FE7592D /* Pods_TransactionsSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransactionsSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1E8B69132B88A945F31CCB /* Pods-TransactionsSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSampleUITests/Pods-TransactionsSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B56E335DC988D97750419B87 /* Pods-TransactionsSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSampleTests/Pods-TransactionsSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B63A970B2132AEA300EF162F /* MapPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPreviewTableViewCell.swift; sourceTree = "<group>"; };
-		B68ABB10212C08D0001D9125 /* LootInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LootInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68ABB10212C08D0001D9125 /* TransactionsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68ABB13212C08D0001D9125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewController.swift; sourceTree = "<group>"; };
 		B68ABB18212C08D0001D9125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B68ABB1A212C08D1001D9125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68ABB1D212C08D1001D9125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B68ABB1F212C08D1001D9125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B68ABB24212C08D1001D9125 /* LootInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LootInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B68ABB28212C08D1001D9125 /* LootInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootInterviewTests.swift; sourceTree = "<group>"; };
+		B68ABB24212C08D1001D9125 /* TransactionsSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionsSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68ABB28212C08D1001D9125 /* TransactionsSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSampleTests.swift; sourceTree = "<group>"; };
 		B68ABB2A212C08D1001D9125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B68ABB2F212C08D1001D9125 /* LootInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LootInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B68ABB33212C08D1001D9125 /* LootInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootInterviewUITests.swift; sourceTree = "<group>"; };
+		B68ABB2F212C08D1001D9125 /* TransactionsSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionsSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B68ABB33212C08D1001D9125 /* TransactionsSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSampleUITests.swift; sourceTree = "<group>"; };
 		B68ABB35212C08D1001D9125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68ABB42212C1984001D9125 /* LootAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LootAPI.swift; sourceTree = "<group>"; };
 		B68ABB46212C1CED001D9125 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -94,7 +93,8 @@
 		B6E2321D212ED31800A74FF4 /* TransactionsDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsDetailsDataSource.swift; sourceTree = "<group>"; };
 		B6E23221212ED58E00A74FF4 /* TransactionDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		B6E23225212ED61800A74FF4 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
-		FF52BA1F9D1276CBDB0E840B /* Pods-LootInterview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LootInterview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview.debug.xcconfig"; sourceTree = "<group>"; };
+		D879F2A2A100B13F3863BCEB /* Pods-TransactionsSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSampleUITests/Pods-TransactionsSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E28D9F69D9679228D36CE51B /* Pods_TransactionsSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransactionsSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A2334D69D69F233D21BFA5 /* Pods_LootInterview.framework in Frameworks */,
+				120D9BF1A7BB49C487B2D690 /* Pods_TransactionsSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81FE60C45A425D9AB96809E9 /* Pods_LootInterviewTests.framework in Frameworks */,
+				F8FEC00BDDBF855824B87DB1 /* Pods_TransactionsSampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861A7C8B6D8251A33988F799 /* Pods_LootInterviewUITests.framework in Frameworks */,
+				13AC6FF582452C5B174C01CD /* Pods_TransactionsSampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,12 +128,12 @@
 		37CC7550CFE09B4B5CDEDE35 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF52BA1F9D1276CBDB0E840B /* Pods-LootInterview.debug.xcconfig */,
-				A7CE71AB53D2E2A4B8BB42F4 /* Pods-LootInterview.release.xcconfig */,
-				7AA76B71D8DD117B64102759 /* Pods-LootInterviewTests.debug.xcconfig */,
-				55B99F6E4C96464FF193208E /* Pods-LootInterviewTests.release.xcconfig */,
-				64D4E7D6ABA6267EE36E93CB /* Pods-LootInterviewUITests.debug.xcconfig */,
-				5B937145D0AA2C8074AB238D /* Pods-LootInterviewUITests.release.xcconfig */,
+				0E35677802F08651BB6ABF12 /* Pods-TransactionsSample.debug.xcconfig */,
+				14A7276D2195F8A3385B9623 /* Pods-TransactionsSample.release.xcconfig */,
+				B56E335DC988D97750419B87 /* Pods-TransactionsSampleTests.debug.xcconfig */,
+				159959FEA940BC0DD9FCF4C6 /* Pods-TransactionsSampleTests.release.xcconfig */,
+				6B1E8B69132B88A945F31CCB /* Pods-TransactionsSampleUITests.debug.xcconfig */,
+				D879F2A2A100B13F3863BCEB /* Pods-TransactionsSampleUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -141,10 +141,10 @@
 		70EAA20257E1BDAED989A952 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3ECB60FC5F420A3C0B396EDF /* Pods_LootInterview.framework */,
 				B68ABB66212DB0F2001D9125 /* PaddingLabel.swift */,
-				93A5B0635B7A068A1C5302B3 /* Pods_LootInterviewTests.framework */,
-				4272E5892867E95172EB0278 /* Pods_LootInterviewUITests.framework */,
+				E28D9F69D9679228D36CE51B /* Pods_TransactionsSample.framework */,
+				3D69DA044F7D1971737F73F9 /* Pods_TransactionsSampleTests.framework */,
+				5DA41D787028790C8FE7592D /* Pods_TransactionsSampleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,9 +152,9 @@
 		B68ABB07212C08D0001D9125 = {
 			isa = PBXGroup;
 			children = (
-				B68ABB12212C08D0001D9125 /* LootInterview */,
-				B68ABB27212C08D1001D9125 /* LootInterviewTests */,
-				B68ABB32212C08D1001D9125 /* LootInterviewUITests */,
+				B68ABB12212C08D0001D9125 /* TransactionsSample */,
+				B68ABB27212C08D1001D9125 /* TransactionsSampleTests */,
+				B68ABB32212C08D1001D9125 /* TransactionsSampleUITests */,
 				B68ABB11212C08D0001D9125 /* Products */,
 				37CC7550CFE09B4B5CDEDE35 /* Pods */,
 				70EAA20257E1BDAED989A952 /* Frameworks */,
@@ -164,14 +164,14 @@
 		B68ABB11212C08D0001D9125 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B68ABB10212C08D0001D9125 /* LootInterview.app */,
-				B68ABB24212C08D1001D9125 /* LootInterviewTests.xctest */,
-				B68ABB2F212C08D1001D9125 /* LootInterviewUITests.xctest */,
+				B68ABB10212C08D0001D9125 /* TransactionsSample.app */,
+				B68ABB24212C08D1001D9125 /* TransactionsSampleTests.xctest */,
+				B68ABB2F212C08D1001D9125 /* TransactionsSampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B68ABB12212C08D0001D9125 /* LootInterview */ = {
+		B68ABB12212C08D0001D9125 /* TransactionsSample */ = {
 			isa = PBXGroup;
 			children = (
 				B68ABB13212C08D0001D9125 /* AppDelegate.swift */,
@@ -184,25 +184,25 @@
 				B68ABB1A212C08D1001D9125 /* Assets.xcassets */,
 				B68ABB1F212C08D1001D9125 /* Info.plist */,
 			);
-			path = LootInterview;
+			path = TransactionsSample;
 			sourceTree = "<group>";
 		};
-		B68ABB27212C08D1001D9125 /* LootInterviewTests */ = {
+		B68ABB27212C08D1001D9125 /* TransactionsSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				B68ABB28212C08D1001D9125 /* LootInterviewTests.swift */,
+				B68ABB28212C08D1001D9125 /* TransactionsSampleTests.swift */,
 				B68ABB2A212C08D1001D9125 /* Info.plist */,
 			);
-			path = LootInterviewTests;
+			path = TransactionsSampleTests;
 			sourceTree = "<group>";
 		};
-		B68ABB32212C08D1001D9125 /* LootInterviewUITests */ = {
+		B68ABB32212C08D1001D9125 /* TransactionsSampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B68ABB33212C08D1001D9125 /* LootInterviewUITests.swift */,
+				B68ABB33212C08D1001D9125 /* TransactionsSampleUITests.swift */,
 				B68ABB35212C08D1001D9125 /* Info.plist */,
 			);
-			path = LootInterviewUITests;
+			path = TransactionsSampleUITests;
 			sourceTree = "<group>";
 		};
 		B68ABB41212C1962001D9125 /* Networking */ = {
@@ -277,9 +277,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B68ABB0F212C08D0001D9125 /* LootInterview */ = {
+		B68ABB0F212C08D0001D9125 /* TransactionsSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B68ABB38212C08D1001D9125 /* Build configuration list for PBXNativeTarget "LootInterview" */;
+			buildConfigurationList = B68ABB38212C08D1001D9125 /* Build configuration list for PBXNativeTarget "TransactionsSample" */;
 			buildPhases = (
 				03170BFE1991BA87EC9ACC8F /* [CP] Check Pods Manifest.lock */,
 				B68ABB0C212C08D0001D9125 /* Sources */,
@@ -291,14 +291,14 @@
 			);
 			dependencies = (
 			);
-			name = LootInterview;
+			name = TransactionsSample;
 			productName = LootInterview;
-			productReference = B68ABB10212C08D0001D9125 /* LootInterview.app */;
+			productReference = B68ABB10212C08D0001D9125 /* TransactionsSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B68ABB23212C08D1001D9125 /* LootInterviewTests */ = {
+		B68ABB23212C08D1001D9125 /* TransactionsSampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B68ABB3B212C08D1001D9125 /* Build configuration list for PBXNativeTarget "LootInterviewTests" */;
+			buildConfigurationList = B68ABB3B212C08D1001D9125 /* Build configuration list for PBXNativeTarget "TransactionsSampleTests" */;
 			buildPhases = (
 				E30BD2613FD10883301FB719 /* [CP] Check Pods Manifest.lock */,
 				B68ABB20212C08D1001D9125 /* Sources */,
@@ -310,14 +310,14 @@
 			dependencies = (
 				B68ABB26212C08D1001D9125 /* PBXTargetDependency */,
 			);
-			name = LootInterviewTests;
+			name = TransactionsSampleTests;
 			productName = LootInterviewTests;
-			productReference = B68ABB24212C08D1001D9125 /* LootInterviewTests.xctest */;
+			productReference = B68ABB24212C08D1001D9125 /* TransactionsSampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B68ABB2E212C08D1001D9125 /* LootInterviewUITests */ = {
+		B68ABB2E212C08D1001D9125 /* TransactionsSampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B68ABB3E212C08D1001D9125 /* Build configuration list for PBXNativeTarget "LootInterviewUITests" */;
+			buildConfigurationList = B68ABB3E212C08D1001D9125 /* Build configuration list for PBXNativeTarget "TransactionsSampleUITests" */;
 			buildPhases = (
 				E68C40500CEA6B813A8DA968 /* [CP] Check Pods Manifest.lock */,
 				B68ABB2B212C08D1001D9125 /* Sources */,
@@ -329,9 +329,9 @@
 			dependencies = (
 				B68ABB31212C08D1001D9125 /* PBXTargetDependency */,
 			);
-			name = LootInterviewUITests;
+			name = TransactionsSampleUITests;
 			productName = LootInterviewUITests;
-			productReference = B68ABB2F212C08D1001D9125 /* LootInterviewUITests.xctest */;
+			productReference = B68ABB2F212C08D1001D9125 /* TransactionsSampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -370,9 +370,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B68ABB0F212C08D0001D9125 /* LootInterview */,
-				B68ABB23212C08D1001D9125 /* LootInterviewTests */,
-				B68ABB2E212C08D1001D9125 /* LootInterviewUITests */,
+				B68ABB0F212C08D0001D9125 /* TransactionsSample */,
+				B68ABB23212C08D1001D9125 /* TransactionsSampleTests */,
+				B68ABB2E212C08D1001D9125 /* TransactionsSampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,7 +417,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LootInterview-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TransactionsSample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,7 +435,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LootInterviewTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TransactionsSampleTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -453,7 +453,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LootInterviewUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TransactionsSampleUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,7 +466,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-TransactionsSample/Pods-TransactionsSample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
@@ -491,7 +491,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LootInterview/Pods-LootInterview-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TransactionsSample/Pods-TransactionsSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -526,7 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68ABB29212C08D1001D9125 /* LootInterviewTests.swift in Sources */,
+				B68ABB29212C08D1001D9125 /* TransactionsSampleTests.swift in Sources */,
 				B68ABB68212DB0F2001D9125 /* PaddingLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,7 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68ABB34212C08D1001D9125 /* LootInterviewUITests.swift in Sources */,
+				B68ABB34212C08D1001D9125 /* TransactionsSampleUITests.swift in Sources */,
 				B68ABB69212DB0F2001D9125 /* PaddingLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,12 +545,12 @@
 /* Begin PBXTargetDependency section */
 		B68ABB26212C08D1001D9125 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B68ABB0F212C08D0001D9125 /* LootInterview */;
+			target = B68ABB0F212C08D0001D9125 /* TransactionsSample */;
 			targetProxy = B68ABB25212C08D1001D9125 /* PBXContainerItemProxy */;
 		};
 		B68ABB31212C08D1001D9125 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B68ABB0F212C08D0001D9125 /* LootInterview */;
+			target = B68ABB0F212C08D0001D9125 /* TransactionsSample */;
 			targetProxy = B68ABB30212C08D1001D9125 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -691,16 +691,16 @@
 		};
 		B68ABB39212C08D1001D9125 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF52BA1F9D1276CBDB0E840B /* Pods-LootInterview.debug.xcconfig */;
+			baseConfigurationReference = 0E35677802F08651BB6ABF12 /* Pods-TransactionsSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LootInterview/Info.plist;
+				INFOPLIST_FILE = TransactionsSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.loot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.transactions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -709,16 +709,16 @@
 		};
 		B68ABB3A212C08D1001D9125 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7CE71AB53D2E2A4B8BB42F4 /* Pods-LootInterview.release.xcconfig */;
+			baseConfigurationReference = 14A7276D2195F8A3385B9623 /* Pods-TransactionsSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LootInterview/Info.plist;
+				INFOPLIST_FILE = TransactionsSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.loot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.transactions;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -727,83 +727,83 @@
 		};
 		B68ABB3C212C08D1001D9125 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AA76B71D8DD117B64102759 /* Pods-LootInterviewTests.debug.xcconfig */;
+			baseConfigurationReference = B56E335DC988D97750419B87 /* Pods-TransactionsSampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LootInterviewTests/Info.plist;
+				INFOPLIST_FILE = TransactionsSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.LootInterviewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.TransactionsSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LootInterview.app/LootInterview";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransactionsSample.app/TransactionsSample";
 			};
 			name = Debug;
 		};
 		B68ABB3D212C08D1001D9125 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55B99F6E4C96464FF193208E /* Pods-LootInterviewTests.release.xcconfig */;
+			baseConfigurationReference = 159959FEA940BC0DD9FCF4C6 /* Pods-TransactionsSampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LootInterviewTests/Info.plist;
+				INFOPLIST_FILE = TransactionsSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.LootInterviewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.TransactionsSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LootInterview.app/LootInterview";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransactionsSample.app/TransactionsSample";
 			};
 			name = Release;
 		};
 		B68ABB3F212C08D1001D9125 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64D4E7D6ABA6267EE36E93CB /* Pods-LootInterviewUITests.debug.xcconfig */;
+			baseConfigurationReference = 6B1E8B69132B88A945F31CCB /* Pods-TransactionsSampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LootInterviewUITests/Info.plist;
+				INFOPLIST_FILE = TransactionsSampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.LootInterviewUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.TransactionsSampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LootInterview;
+				TEST_TARGET_NAME = TransactionsSample;
 			};
 			name = Debug;
 		};
 		B68ABB40212C08D1001D9125 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B937145D0AA2C8074AB238D /* Pods-LootInterviewUITests.release.xcconfig */;
+			baseConfigurationReference = D879F2A2A100B13F3863BCEB /* Pods-TransactionsSampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LootInterviewUITests/Info.plist;
+				INFOPLIST_FILE = TransactionsSampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.LootInterviewUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.angistalis.TransactionsSampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LootInterview;
+				TEST_TARGET_NAME = TransactionsSample;
 			};
 			name = Release;
 		};
@@ -819,7 +819,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B68ABB38212C08D1001D9125 /* Build configuration list for PBXNativeTarget "LootInterview" */ = {
+		B68ABB38212C08D1001D9125 /* Build configuration list for PBXNativeTarget "TransactionsSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B68ABB39212C08D1001D9125 /* Debug */,
@@ -828,7 +828,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B68ABB3B212C08D1001D9125 /* Build configuration list for PBXNativeTarget "LootInterviewTests" */ = {
+		B68ABB3B212C08D1001D9125 /* Build configuration list for PBXNativeTarget "TransactionsSampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B68ABB3C212C08D1001D9125 /* Debug */,
@@ -837,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B68ABB3E212C08D1001D9125 /* Build configuration list for PBXNativeTarget "LootInterviewUITests" */ = {
+		B68ABB3E212C08D1001D9125 /* Build configuration list for PBXNativeTarget "TransactionsSampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B68ABB3F212C08D1001D9125 /* Debug */,
