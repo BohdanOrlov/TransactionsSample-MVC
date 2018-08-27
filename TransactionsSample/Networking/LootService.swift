@@ -13,19 +13,13 @@ import RealmSwift
 
 public let queueIdentifier = "com.angistalis.loot"
 
-public struct APIManager {
-    static var sharedManager = APIManager()
-    
-    static let loot = NetworkManager<LootAPI>()
-}
-
 public class NetworkManager<Target> where Target: TargetType {
     
-    let provider: MoyaProvider<Target>!
+    let provider: MoyaProvider<Target>
     
     var responseQueue: DispatchQueue
     
-    public init(queue: String = queueIdentifier, endpointClosure: ((Target) -> Endpoint)? = nil) {
+    public init(with networkProvider: MoyaProvider<Target>, queue: String = queueIdentifier, endpointClosure: ((Target) -> Endpoint)? = nil) {
         
         self.responseQueue = DispatchQueue(label: queueIdentifier, attributes: DispatchQueue.Attributes.concurrent)
         
@@ -78,7 +72,7 @@ public class NetworkManager<Target> where Target: TargetType {
     
     // MARK: Generic Requests
     
-    func requestArray<T: Decodable>(_ type: T.Type,
+    public func requestArray<T: Decodable>(_ type: T.Type,
                                     endpoint: Target,
                                     queue: DispatchQueue = DispatchQueue.main,
                                     completion completionClosure: ((Result<[T], Moya.MoyaError>) -> Void)? = nil
@@ -149,13 +143,11 @@ public class NetworkManager<Target> where Target: TargetType {
             }
         }
     }
-}
-
-extension NetworkManager {
+    
     func loadTransactions(completion: ((Bool) -> Void)? = nil) {
         let getTransactions = LootAPI.getTransactions
         
-        _ = APIManager.loot.requestArray(Transaction.self, endpoint: getTransactions, completion: { (result) in
+        _ = DependencyContainer().makeLootService().requestArray(Transaction.self, endpoint: getTransactions, completion: { (result) in
             switch result {
             case let .success(array):
                 do {

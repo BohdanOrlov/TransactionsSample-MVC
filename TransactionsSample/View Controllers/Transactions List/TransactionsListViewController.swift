@@ -21,6 +21,7 @@ class TransactionsListViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: SearchResultsTableViewController())
     
+    var lootService = DependencyContainer().makeLootService()
     var dataSource: TransactionsDataSource!
     
     var balancePoints: [Transaction] = []
@@ -141,7 +142,7 @@ class TransactionsListViewController: UIViewController {
     }
 
     func loadTransactions() {
-        _ = APIManager.loot.loadTransactions(completion: { [weak self] (success) in
+        _ = lootService.loadTransactions(completion: { [weak self] (success) in
             guard let `self` = self else { return }
             
             self.isLoading = false
