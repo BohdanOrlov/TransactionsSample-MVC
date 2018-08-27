@@ -8,12 +8,44 @@
 
 import UIKit
 import SwiftDate
+import ScrollableGraphView
+import RealmSwift
 
 class TransactionsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var balanceView: BalanceView!
+    @IBOutlet weak var graphView: ScrollableGraphView!
     
     var dataSource: TransactionsDataSource!
+    
+    var balancePoints: [Transaction] = []
+    
+    fileprivate func setupGraphView() {
+        graphView.dataSource = self
+        
+        let linePlot = LinePlot(identifier: "balance")
+        linePlot.lineColor = UIColor.flatSkyBlue
+        linePlot.lineStyle = ScrollableGraphViewLineStyle.smooth
+        linePlot.adaptAnimationType = ScrollableGraphViewAnimationType.elastic
+        linePlot.shouldFill = true
+        linePlot.fillType = ScrollableGraphViewFillType.gradient
+        linePlot.fillGradientType = ScrollableGraphViewGradientType.linear
+        linePlot.fillGradientStartColor = UIColor.flatSkyBlue
+        linePlot.fillGradientEndColor = UIColor.white
+        
+        let referenceLines = ReferenceLines()
+        referenceLines.shouldShowReferenceLines = false
+        
+        graphView.addPlot(plot: linePlot)
+        graphView.addReferenceLines(referenceLines: referenceLines)
+        
+        graphView.shouldAdaptRange = true
+        graphView.shouldRangeAlwaysStartAtZero = true
+        graphView.dataPointSpacing = 80
+        graphView.direction = .rightToLeft
+        
+        graphView.reload()
+    }
     
     fileprivate func setupUI() {
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -21,6 +53,8 @@ class TransactionsListViewController: UIViewController {
         tableView.delegate = self
         
         tableView.registerReusableHeaderFooterView(TransactionsListHeaderView.self)
+        
+        setupGraphView()
     }
     
     override func viewDidLoad() {
@@ -48,6 +82,14 @@ class TransactionsListViewController: UIViewController {
         if let first = self.dataSource.transaction(at: IndexPath(row: 0, section: 0)) {
             self.balanceView.setBalance(with: first.postTransactionBalance)
         }
+        
+        let realm = try! Realm()
+        
+        self.balancePoints = realm.objects(Group.self).flatMap({ $0.models }).sorted(by: { (t1, t2) -> Bool in
+            t1.settlementDate < t2.settlementDate
+        })
+        
+        graphView.reload()
     }
 
     func loadTransactions() {
@@ -89,5 +131,34 @@ extension TransactionsListViewController: UITableViewDelegate {
         controller.transaction = item
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension TransactionsListViewController: ScrollableGraphViewDataSource {
+    func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
+        // Return the data for each plot.
+        switch(plot.identifier) {
+        case "balance":
+            let item = balancePoints[pointIndex]
+            
+            return Double(item.postTransactionBalance)
+        default:
+            return 0
+        }
+    }
+    
+    func label(atIndex pointIndex: Int) -> String {
+        let transaction = balancePoints[pointIndex]
+        
+        let date = transaction.settlementDate
+        if date.year == Date().year {
+            return date.toString(DateToStringStyles.custom("MMM d"))
+        } else {
+            return date.toString(DateToStringStyles.custom("MMM d, yyyy"))
+        }
+    }
+    
+    func numberOfPoints() -> Int {
+        return balancePoints.count
     }
 }

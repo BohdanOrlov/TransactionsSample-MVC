@@ -34,31 +34,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZe-tW-lBy" customClass="BalanceView" customModule="TransactionsSample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="200"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mnl-Dq-MoY">
-                                        <rect key="frame" x="123.5" y="15" width="128.5" height="50.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IQE-WC-9AY">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjI-DB-Lqg">
-                                                <rect key="frame" x="0.0" y="0.0" width="128.5" height="33.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP • British Pound" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsp-Un-Vfw">
-                                                <rect key="frame" x="0.0" y="33.5" width="128.5" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mnl-Dq-MoY">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjI-DB-Lqg">
+                                                        <rect key="frame" x="169.5" y="0.0" width="36.5" height="33.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP • British Pound" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsp-Un-Vfw">
+                                                        <rect key="frame" x="123.5" y="33.5" width="128.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmP-Bv-v7H" customClass="ScrollableGraphView" customModule="ScrollableGraphView">
+                                                <rect key="frame" x="0.0" y="70.5" width="375" height="129.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="direction_">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="AYc-GC-fiw"/>
-                                    <constraint firstItem="Mnl-Dq-MoY" firstAttribute="centerX" secondItem="qZe-tW-lBy" secondAttribute="centerX" id="Mmz-U1-8FX"/>
-                                    <constraint firstItem="Mnl-Dq-MoY" firstAttribute="centerY" secondItem="qZe-tW-lBy" secondAttribute="centerY" id="hnd-ov-qXu"/>
+                                    <constraint firstAttribute="height" constant="200" id="AYc-GC-fiw"/>
+                                    <constraint firstAttribute="bottom" secondItem="IQE-WC-9AY" secondAttribute="bottom" id="E1P-fm-aFK"/>
+                                    <constraint firstItem="IQE-WC-9AY" firstAttribute="top" secondItem="qZe-tW-lBy" secondAttribute="top" id="IxW-tH-HI0"/>
+                                    <constraint firstAttribute="trailing" secondItem="IQE-WC-9AY" secondAttribute="trailing" id="Ser-Hm-mhJ"/>
+                                    <constraint firstItem="IQE-WC-9AY" firstAttribute="leading" secondItem="qZe-tW-lBy" secondAttribute="leading" id="eww-CX-dUF"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="ibSubtitleLabel" destination="wsp-Un-Vfw" id="par-Lk-wd9"/>
@@ -66,7 +82,7 @@
                                 </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mrz-g0-qLg">
-                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="220" width="375" height="447"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -151,6 +167,7 @@
                     <navigationItem key="navigationItem" id="JPG-ZW-WU1"/>
                     <connections>
                         <outlet property="balanceView" destination="qZe-tW-lBy" id="M0j-rB-ltn"/>
+                        <outlet property="graphView" destination="bmP-Bv-v7H" id="Hpp-fl-ezr"/>
                         <outlet property="tableView" destination="Mrz-g0-qLg" id="cub-r5-jbu"/>
                     </connections>
                 </viewController>
