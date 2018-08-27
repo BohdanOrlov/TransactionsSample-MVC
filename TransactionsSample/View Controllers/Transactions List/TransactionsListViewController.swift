@@ -182,6 +182,8 @@ class TransactionsListViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension TransactionsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard dataSource?.numberOfSections ?? 0 > 0 else {
@@ -212,6 +214,8 @@ extension TransactionsListViewController: UITableViewDelegate {
         navigationController?.pushViewController(controller, animated: true)
     }
 }
+
+// MARK: - ScrollableGraphViewDataSource
 
 extension TransactionsListViewController: ScrollableGraphViewDataSource {
     func value(forPlot plot: Plot, atIndex pointIndex: Int) -> Double {
@@ -245,6 +249,8 @@ extension TransactionsListViewController: ScrollableGraphViewDataSource {
         return balancePoints.count
     }
 }
+
+// MARK: - DZNEmptyDataSetDelegate
 
 extension TransactionsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {

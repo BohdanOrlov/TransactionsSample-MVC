@@ -24,6 +24,7 @@ class TransactionsListHeaderView: UITableViewHeaderFooterView, Reusable, NibReus
         ibTitleLabel.text = item.date
         
         let totalAmount = item.models.map({ return $0.amount }).reduce(0, +)
+        
         ibAmountLabel.text = Transaction.numberFormatter.string(from: totalAmount as NSNumber)
     }
     

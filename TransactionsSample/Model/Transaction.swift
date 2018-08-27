@@ -9,23 +9,6 @@
 import RealmSwift
 import MapKit
 
-class Location: RealmSwift.Object, Codable {
-    @objc dynamic var latitude: Double = 0
-    @objc dynamic var longitude: Double = 0
-    
-    required convenience init(from decoder: Decoder) throws {
-        self.init()
-        
-        let map = try decoder.container(keyedBy: CodingKeys.self)
-        if let latitudeString = try? map.decode(String.self, forKey: .latitude) {
-            latitude = Double(latitudeString) ?? 0
-        }
-        if let longitudeString = try? map.decode(String.self, forKey: .longitude) {
-            longitude = Double(longitudeString) ?? 0
-        }
-    }
-}
-
 enum TransactionCategory: Int, CustomStringConvertible {
     case general = 0
     case shopping

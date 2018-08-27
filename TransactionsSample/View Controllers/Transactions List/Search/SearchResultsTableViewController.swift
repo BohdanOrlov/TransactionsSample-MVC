@@ -45,7 +45,6 @@ class SearchResultsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setupUI()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,7 +55,11 @@ class SearchResultsTableViewController: UITableViewController {
 
         }
     }
-    
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension SearchResultsTableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard dataSource?.numberOfSections ?? 0 > 0 else {
             return UIView()
@@ -87,6 +90,8 @@ class SearchResultsTableViewController: UITableViewController {
     }
 }
 
+// MARK: - UISearchResultsUpdating
+
 extension SearchResultsTableViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
@@ -97,6 +102,8 @@ extension SearchResultsTableViewController: UISearchResultsUpdating {
         
     }
 }
+
+// MARK: - UISearchBarDelegate
 
 extension SearchResultsTableViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
