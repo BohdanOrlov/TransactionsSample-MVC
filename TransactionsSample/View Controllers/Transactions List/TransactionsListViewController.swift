@@ -19,8 +19,6 @@ class TransactionsListViewController: UIViewController {
     @IBOutlet weak var graphViewContainer: UIView!
     @IBOutlet weak var filterButton: UIButton!
     
-    let searchController = UISearchController(searchResultsController: SearchResultsTableViewController())
-    
     var lootService = DependencyContainer().makeLootService()
     var dataSource: TransactionsDataSource!
     
@@ -56,17 +54,7 @@ class TransactionsListViewController: UIViewController {
         graphView.dataSource = self
         
     }
-    
-    fileprivate func setupSearchBar() {
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = true
-        searchController.searchBar.placeholder = "Search"
-        searchController.searchBar.delegate = self
-        balanceView.addSubview(searchController.searchBar)
-        searchController.searchBar.alpha = 0
-        definesPresentationContext = true
-    }
-    
+
     fileprivate func setupTableView() {
         tableView.emptyDataSetSource = self
         tableView.emptyDataSetDelegate = self
@@ -81,9 +69,7 @@ class TransactionsListViewController: UIViewController {
     
     fileprivate func setupUI() {
         hideBackButtonTitle()
-        
-        setupSearchBar()
-        
+                
         setupTableView()
         
         setupGraphView()
@@ -186,11 +172,13 @@ class TransactionsListViewController: UIViewController {
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
-        if searchController.searchBar.frame.origin.y > 0 {
-            hideSearchBar()
-        } else {
-            showSearchBar()
-        }
+        let controller = SearchResultsTableViewController()
+        
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .overCurrentContext
+        navigationController.modalTransitionStyle = .crossDissolve
+        
+        present(navigationController, animated: true, completion: nil)
     }
 }
 
@@ -280,49 +268,5 @@ extension TransactionsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSet
     
     func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
         return -200/2
-    }
-}
-
-extension TransactionsListViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let controller = searchController.searchResultsController as? SearchResultsTableViewController else { return }
-        
-        let filteredDatasource = TransactionsDataSource()
-        filteredDatasource.searchTerm = searchController.searchBar.text
-        controller.dataSource = filteredDatasource
-        
-        controller.tableView.reloadData()
-    }
-}
-
-extension TransactionsListViewController {
-    func showSearchBar() {
-        
-        UIView.animate(withDuration: 0.35, animations: {
-            self.searchController.searchBar.alpha = 1.0
-        }) { (finished) in
-            self.searchController.searchBar.becomeFirstResponder()
-        }
-    }
-    
-    func hideSearchBar() {
-        UIView.animate(withDuration: 0.35) {
-            self.searchController.searchBar.alpha = 0
-        }
-    }
-}
-
-extension TransactionsListViewController: UISearchBarDelegate {
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        hideSearchBar()
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        if searchBar.text == nil {
-            hideSearchBar()
-        } else if let text = searchBar.text, text.count == 0 {
-            hideSearchBar()
-        }
     }
 }

@@ -9,7 +9,8 @@
 import UIKit
 
 class SearchResultsTableViewController: UITableViewController {
-
+    let searchController = UISearchController(searchResultsController: nil)
+    
     var dataSource: TransactionsDataSource! {
         didSet {
             tableView.dataSource = dataSource
@@ -18,6 +19,20 @@ class SearchResultsTableViewController: UITableViewController {
     }
     
     fileprivate func setupUI() {
+        title = "Search"
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        definesPresentationContext = true
+        
+        let dataSource = TransactionsDataSource()
+        tableView.dataSource = dataSource
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 70
@@ -31,6 +46,15 @@ class SearchResultsTableViewController: UITableViewController {
         
         setupUI()
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        DispatchQueue.main.async {
+            self.searchController.searchBar.becomeFirstResponder()
+
+        }
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -60,5 +84,22 @@ class SearchResultsTableViewController: UITableViewController {
         controller.transaction = item
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension SearchResultsTableViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        let filteredDatasource = TransactionsDataSource()
+        filteredDatasource.searchTerm = searchController.searchBar.text
+        dataSource = filteredDatasource
+        
+    }
+}
+
+extension SearchResultsTableViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dismiss(animated: true, completion: nil)
     }
 }
