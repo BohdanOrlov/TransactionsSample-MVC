@@ -10,6 +10,7 @@ import UIKit
 import SwiftDate
 import ScrollableGraphView
 import RealmSwift
+import DZNEmptyDataSet
 
 class TransactionsListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +20,8 @@ class TransactionsListViewController: UIViewController {
     var dataSource: TransactionsDataSource!
     
     var balancePoints: [Transaction] = []
+    
+    var isLoading = true
     
     fileprivate func setupGraphView() {
         graphView.dataSource = self
@@ -32,6 +35,7 @@ class TransactionsListViewController: UIViewController {
         linePlot.fillGradientType = ScrollableGraphViewGradientType.linear
         linePlot.fillGradientStartColor = UIColor.flatSkyBlue
         linePlot.fillGradientEndColor = UIColor.white
+        linePlot.lineWidth = 4
         
         let referenceLines = ReferenceLines()
         referenceLines.shouldShowReferenceLines = false
@@ -48,6 +52,9 @@ class TransactionsListViewController: UIViewController {
     }
     
     fileprivate func setupUI() {
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 70
         tableView.delegate = self
@@ -160,5 +167,30 @@ extension TransactionsListViewController: ScrollableGraphViewDataSource {
     
     func numberOfPoints() -> Int {
         return balancePoints.count
+    }
+}
+
+extension TransactionsListViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let attributes = [
+            NSAttributedStringKey.foregroundColor: UIColor.black,
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)
+        ]
+        
+        return NSAttributedString(string: "No Transactions Found", attributes: attributes)
+    }
+    
+    func customView(forEmptyDataSet scrollView: UIScrollView!) -> UIView! {
+        if isLoading {
+            let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+            activityIndicator.startAnimating()
+            
+            return activityIndicator
+        }
+        return nil
+    }
+    
+    func verticalOffset(forEmptyDataSet scrollView: UIScrollView!) -> CGFloat {
+        return -200/2
     }
 }
