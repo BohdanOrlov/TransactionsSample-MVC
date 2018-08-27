@@ -9,6 +9,7 @@
 import Foundation
 import Moya
 import Result
+import RealmSwift
 
 public let queueIdentifier = "com.angistalis.loot"
 
@@ -147,5 +148,52 @@ public class NetworkManager<Target> where Target: TargetType {
                 }
             }
         }
+    }
+}
+
+extension NetworkManager {
+    func loadTransactions(completion: ((Bool) -> Void)? = nil) {
+        let getTransactions = LootAPI.getTransactions
+        
+        _ = APIManager.loot.requestArray(Transaction.self, endpoint: getTransactions, completion: { (result) in
+            switch result {
+            case let .success(array):
+                do {
+                    let realm = try Realm()
+                    
+                    try realm.write {
+                        realm.deleteAll()
+                    }
+                    
+                    for item in array {
+                        Group.add(item)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Transaction.Notifications.didFetchTransactions, object: nil)
+                        completion?(true)
+                    }
+                    
+                } catch {
+                    Logger.error("Realm error: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        completion?(false)
+                    }
+                }
+                
+                
+            case let .failure(error):
+                if let data = error.response?.data {
+                    Logger.debug(String(data: data, encoding: String.Encoding.utf8) ?? "Invalid response data")
+                }
+                
+                Logger.debug("Moya error: \(error.localizedDescription)")
+                
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: Transaction.Notifications.didFailToFetchTransactions, object: nil)
+                    completion?(false)
+                }
+            }
+        })
     }
 }

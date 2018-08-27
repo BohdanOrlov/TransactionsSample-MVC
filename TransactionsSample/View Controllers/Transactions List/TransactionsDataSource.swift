@@ -7,34 +7,57 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TransactionsDataSource: NSObject, UITableViewDataSource {
     // MARK: - Internal Properties
-    fileprivate var items: [Transaction] = []
+    
+    fileprivate var items: Results<Group>!
     
     // MARK: - Lifecycle
-    init(array: [Transaction]) {
-        items = array.sorted(by: { $0.authorisationDate > $1.authorisationDate })
+
+    override init() {
+        super.init()
+        
+        let realm = try! Realm()
+        
+        items = realm.objects(Group.self).sorted(byKeyPath: "absoluteDate", ascending: false)
     }
     
-    var numberOfItems: Int {
+    // MARK: - Helpers
+    
+    var numberOfSections: Int {
         return items.count
     }
     
-    func item(at index: Int) -> Transaction? {
-        guard index >= 0, index < items.count else { return nil }
-        
+    func group(at index: Int) -> Group {
         return items[index]
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func transaction(at indexPath: IndexPath) -> Transaction? {
+        let group = items[indexPath.section]
+        
+        return group.models[indexPath.row]
+    }
+    
+    // MARK: - UITableView Datasource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let item = items[section]
+        
+        return item.models.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TransactionTableViewCell.reuseIdentifier, for: indexPath) as! TransactionTableViewCell
         
-        let transaction = items[indexPath.row]
+        let group = items[indexPath.section]
+        
+        let transaction = group.models[indexPath.row]
         
         cell.configure(with: transaction, at: indexPath)
         

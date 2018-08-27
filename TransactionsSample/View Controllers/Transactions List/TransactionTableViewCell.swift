@@ -28,8 +28,8 @@ class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell {
     }
 
     func configure(with item: Transaction, at indexPath: IndexPath) {
-        ibTitleLabel.text = item.description
-        ibSubtitleLabel.text = Transaction.timeFormatter.string(from: item.authorisationDate)
+        ibTitleLabel.text = item.descriptionString
+        ibSubtitleLabel.text = Transaction.timeFormatter.string(from: item.settlementDate)
         
         setAmount(with: item.amount)
     }
@@ -38,7 +38,7 @@ class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell {
         ibAmountLabel.text = Transaction.numberFormatter.string(from: number as NSNumber)
         
         ibAmountLabel.textColor = number > 0 ? .white : .black
-        ibAmountLabel.backgroundColor = number > 0 ? .green : .white
+        ibAmountLabel.backgroundColor = number > 0 ? UIColor.flatGreen : .white
     }
 
 }

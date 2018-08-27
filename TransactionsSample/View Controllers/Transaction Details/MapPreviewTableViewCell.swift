@@ -46,27 +46,29 @@ class MapPreviewTableViewCell: UITableViewCell, Reusable, ConfigurableCell  {
 }
 
 extension MapPreviewTableViewCell {
+    /**
+    This should be optimized to load only once per coordinate and ideally save the value in Realm.
+    The address string will never change after reverse geocoding it.
+     **/
     func findAddress(item: Transaction, completionHandler: @escaping (CLPlacemark?)
         -> Void ) {
-        // Use the last reported location.
-        if let location = item.coordinates {
+
+        if let coordinate = item.coordinates {
             let geocoder = CLGeocoder()
             
-            // Look up the location and pass it to the completion handler
-            let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
+            let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            
             geocoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
-                if error == nil {
-                    let firstLocation = placemarks?.first
-                    completionHandler(firstLocation)
-                }
-                else {
-                    // An error occurred during geocoding.
+                guard error == nil else {
                     completionHandler(nil)
+                    return
                 }
+                
+                let firstLocation = placemarks?.first
+                completionHandler(firstLocation)
             })
-        }
-        else {
-            // No location was available.
+            
+        } else {
             completionHandler(nil)
         }
     }

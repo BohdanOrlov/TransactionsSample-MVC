@@ -31,7 +31,7 @@ class TransactionDetailHeaderTableViewCell: UITableViewCell, Reusable, Configura
         ibDateLabel.text = item.settlementDate.toString(DateToStringStyles.dateTime(.medium))
         
         ibAmountLabel.text = Transaction.numberFormatter.string(from: item.amount as NSNumber)
-        ibDescriptionLabel.text = item.description
+        ibDescriptionLabel.text = item.descriptionString
         
     }
 }

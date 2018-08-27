@@ -14,9 +14,7 @@ class TransactionDetailsViewController: UIViewController {
     var transaction: Transaction!
     var dataSource: TransactionDetailsDataSource!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    fileprivate func setupUI() {
         // Do any additional setup after loading the view.
         
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -27,14 +25,16 @@ class TransactionDetailsViewController: UIViewController {
         tableView.delegate = self
         tableView.reloadData()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupUI()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillAppear(animated)
-    }
-    
-    func setupUI() {
-        
     }
 }
 

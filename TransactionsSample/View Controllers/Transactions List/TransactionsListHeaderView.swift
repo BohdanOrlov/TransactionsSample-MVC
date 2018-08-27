@@ -9,19 +9,22 @@
 import UIKit
 import SwiftDate
 
-class TransactionsListHeaderView: UITableViewHeaderFooterView, Reusable, ConfigurableCell, NibReusable {
+class TransactionsListHeaderView: UITableViewHeaderFooterView, Reusable, NibReusable {
     typealias T = Transaction
     
-    @IBOutlet weak var ibDayLabel: UILabel!
-    @IBOutlet weak var ibMonthLabel: UILabel!
+    @IBOutlet weak var ibTitleLabel: UILabel!
+    @IBOutlet weak var ibAmountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configure(with item: Transaction, at indexPath: IndexPath) {
-
+    func configure(with item: Group, at index: Int) {
+        ibTitleLabel.text = item.date
+        
+        let totalAmount = item.models.map({ return $0.amount }).reduce(0, +)
+        ibAmountLabel.text = Transaction.numberFormatter.string(from: totalAmount as NSNumber)
     }
     
 }

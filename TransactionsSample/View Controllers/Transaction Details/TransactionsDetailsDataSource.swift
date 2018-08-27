@@ -10,12 +10,16 @@ import UIKit
 
 class TransactionDetailsDataSource: NSObject, UITableViewDataSource {
     // MARK: - Internal Properties
+    
     var item: Transaction
     
     // MARK: - Lifecycle
+    
     init(transaction: Transaction) {
         item = transaction
     }
+    
+    // MARK: - UITableView Datasource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         var sections = 1

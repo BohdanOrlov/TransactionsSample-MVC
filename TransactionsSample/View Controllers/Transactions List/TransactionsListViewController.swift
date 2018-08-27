@@ -15,15 +15,21 @@ class TransactionsListViewController: UIViewController {
     
     var dataSource: TransactionsDataSource!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+    fileprivate func setupUI() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 70
         tableView.delegate = self
         
         tableView.registerReusableHeaderFooterView(TransactionsListHeaderView.self)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        hideBackButtonTitle()
+        
+        setupUI()
         
         loadTransactions()
     }
@@ -32,25 +38,24 @@ class TransactionsListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
     }
+    
+    func reloadDataSource() {
+        self.dataSource = TransactionsDataSource()
+        self.tableView.dataSource = self.dataSource
+        self.tableView.reloadData()
+        self.balanceView.isHidden = false
+        
+        if let first = self.dataSource.transaction(at: IndexPath(row: 0, section: 0)) {
+            self.balanceView.setBalance(with: first.postTransactionBalance)
+        }
+    }
 
     func loadTransactions() {
-        let getTransactions = LootAPI.getTransactions
-        
-        _ = APIManager.loot.requestArray(Transaction.self, endpoint: getTransactions, completion: { [unowned self] (result) in
-            switch result {
-            case let .success(array):
-                
-                self.dataSource = TransactionsDataSource(array: array)
-                self.tableView.dataSource = self.dataSource
-                self.tableView.reloadData()
-                self.balanceView.isHidden = false
-                
-                if let first = self.dataSource.item(at: 0) {
-                    self.balanceView.setBalance(with: first.postTransactionBalance)
-                }
-                
-            case let .failure(error):
-                print(error)
+        _ = APIManager.loot.loadTransactions(completion: { [weak self] (success) in
+            guard let `self` = self else { return }
+            
+            if success {
+                self.reloadDataSource()
             }
         })
     }
@@ -58,14 +63,15 @@ class TransactionsListViewController: UIViewController {
 
 extension TransactionsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard dataSource?.numberOfItems ?? 0 > 0 else {
+        guard dataSource?.numberOfSections ?? 0 > 0 else {
             return UIView()
         }
         
         guard let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: TransactionsListHeaderView.reuseIdentifier) as? TransactionsListHeaderView else { return nil }
         
-        cell.ibDayLabel.text = "\(Date().day)"
-        cell.ibMonthLabel.text = Date().toString(DateToStringStyles.custom("MMMM yyyy"))
+        let group = dataSource.group(at: section)
+        
+        cell.configure(with: group, at: section)
         
         return cell
     }
@@ -77,7 +83,7 @@ extension TransactionsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let item = dataSource.item(at: indexPath.row)
+        let item = dataSource.transaction(at: indexPath)
         
         let controller = UIStoryboard.main.transactionDetails
         controller.transaction = item

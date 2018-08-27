@@ -10,6 +10,8 @@
 		120D9BF1A7BB49C487B2D690 /* Pods_TransactionsSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28D9F69D9679228D36CE51B /* Pods_TransactionsSample.framework */; };
 		13AC6FF582452C5B174C01CD /* Pods_TransactionsSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA41D787028790C8FE7592D /* Pods_TransactionsSampleUITests.framework */; };
 		B63A970C2132AEA300EF162F /* MapPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A970B2132AEA300EF162F /* MapPreviewTableViewCell.swift */; };
+		B63A970E2133E09800EF162F /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A970D2133E09800EF162F /* Group.swift */; };
+		B63A97102133EF5C00EF162F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A970F2133EF5C00EF162F /* UIViewController.swift */; };
 		B68ABB14212C08D0001D9125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB13212C08D0001D9125 /* AppDelegate.swift */; };
 		B68ABB16212C08D0001D9125 /* TransactionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */; };
 		B68ABB19212C08D0001D9125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB17212C08D0001D9125 /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		6B1E8B69132B88A945F31CCB /* Pods-TransactionsSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSampleUITests/Pods-TransactionsSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B56E335DC988D97750419B87 /* Pods-TransactionsSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransactionsSampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TransactionsSampleTests/Pods-TransactionsSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B63A970B2132AEA300EF162F /* MapPreviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPreviewTableViewCell.swift; sourceTree = "<group>"; };
+		B63A970D2133E09800EF162F /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		B63A970F2133EF5C00EF162F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		B68ABB10212C08D0001D9125 /* TransactionsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68ABB13212C08D0001D9125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 		B68ABB52212C225F001D9125 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B63A970D2133E09800EF162F /* Group.swift */,
 				B68ABB4E212C2016001D9125 /* Transaction.swift */,
 			);
 			path = Model;
@@ -246,6 +251,7 @@
 				B68ABB5D212D7AC3001D9125 /* UITableView.swift */,
 				B68ABB62212DAB17001D9125 /* UIView.swift */,
 				B6E23225212ED61800A74FF4 /* UIStoryboard.swift */,
+				B63A970F2133EF5C00EF162F /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -507,6 +513,7 @@
 				B68ABB5E212D7AC3001D9125 /* UITableView.swift in Sources */,
 				B68ABB4B212C1DB8001D9125 /* Logger.swift in Sources */,
 				B68ABB47212C1CED001D9125 /* APIManager.swift in Sources */,
+				B63A970E2133E09800EF162F /* Group.swift in Sources */,
 				B6E2321E212ED31800A74FF4 /* TransactionsDetailsDataSource.swift in Sources */,
 				B68ABB5A212D79F6001D9125 /* TransactionTableViewCell.swift in Sources */,
 				B68ABB56212D7909001D9125 /* TransactionsDataSource.swift in Sources */,
@@ -514,6 +521,7 @@
 				B6E23222212ED58E00A74FF4 /* TransactionDetailHeaderTableViewCell.swift in Sources */,
 				B68ABB16212C08D0001D9125 /* TransactionsListViewController.swift in Sources */,
 				B6E23226212ED61800A74FF4 /* UIStoryboard.swift in Sources */,
+				B63A97102133EF5C00EF162F /* UIViewController.swift in Sources */,
 				B68ABB14212C08D0001D9125 /* AppDelegate.swift in Sources */,
 				B68ABB43212C1984001D9125 /* LootAPI.swift in Sources */,
 				B68ABB67212DB0F2001D9125 /* PaddingLabel.swift in Sources */,

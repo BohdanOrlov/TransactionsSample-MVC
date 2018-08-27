@@ -6,18 +6,16 @@
 //  Copyright © 2018 Thomas Angistalis. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 import MapKit
 
-struct Entry {
+class Location: RealmSwift.Object, Codable {
+    @objc dynamic var latitude: Double = 0
+    @objc dynamic var longitude: Double = 0
     
-}
-
-struct Location: Codable, Equatable {
-    var latitude: Double?
-    var longitude: Double?
-    
-    init(from decoder: Decoder) throws {
+    required convenience init(from decoder: Decoder) throws {
+        self.init()
+        
         let map = try decoder.container(keyedBy: CodingKeys.self)
         if let latitudeString = try? map.decode(String.self, forKey: .latitude) {
             latitude = Double(latitudeString) ?? 0
@@ -28,21 +26,28 @@ struct Location: Codable, Equatable {
     }
 }
 
-struct Transaction: Codable, Equatable {
+class Transaction: RealmSwift.Object, Codable {
     
-    var amount: Float
-    var description: String
-    var postTransactionBalance: Float
-    var settlementDate: Date
-    var authorisationDate: Date
+    @objc dynamic var amount: Float = 0
+    @objc dynamic var descriptionString: String = ""
+    @objc dynamic var postTransactionBalance: Float = 0
+    @objc dynamic var settlementDate: Date = Date.init(timeIntervalSinceReferenceDate: 0)
+    @objc dynamic var authorisationDate: Date = Date.init(timeIntervalSinceReferenceDate: 0)
     
-    var location: Location?
+    @objc dynamic var location: Location?
     
     var statusLabel: String {
         return "Completed"
     }
     
-    init(from decoder: Decoder) throws {
+    enum CodingKeys: String, CodingKey {
+        case descriptionString = "description"
+        case amount, postTransactionBalance, settlementDate, authorisationDate, location
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        self.init()
+        
         let map = try decoder.container(keyedBy: CodingKeys.self)
         
         if let amountString = try? map.decode(String.self, forKey: .amount) {
@@ -57,7 +62,7 @@ struct Transaction: Codable, Equatable {
             postTransactionBalance = 0
         }
         
-        description = try map.decode(String.self, forKey: .description)
+        descriptionString = try map.decode(String.self, forKey: .descriptionString)
         settlementDate = try map.decode(Date.self, forKey: .settlementDate)
         authorisationDate = try map.decode(Date.self, forKey: .authorisationDate)
         location = try map.decodeIfPresent(Location.self, forKey: .location)
@@ -65,6 +70,15 @@ struct Transaction: Codable, Equatable {
 }
 
 extension Transaction {
+    public struct Notifications {
+        
+        /// Fired when results are loaded
+        static let didFetchTransactions = UIKit.Notification.Name("didFetchTransactions")
+        
+        /// Fired when there is an error fetching the results
+        static let didFailToFetchTransactions = UIKit.Notification.Name("didFailToFetchTransactions")
+    }
+    
     public static let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
