@@ -17,6 +17,12 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         }
     }
     
+    var searchTerm: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
     var items: Results<Group>!
     
     // MARK: - Lifecycle
@@ -32,6 +38,8 @@ class TransactionsDataSource: NSObject, UITableViewDataSource {
         
         if let filter = categoryFilterType {
             items = realm.objects(Group.self).filter("ANY models.category = \(filter.rawValue)").sorted(byKeyPath: "absoluteDate", ascending: false)
+        } else if let search = searchTerm, search.count > 0 {
+            items = realm.objects(Group.self).filter("ANY models.descriptionString CONTAINS '\(search)'").sorted(byKeyPath: "absoluteDate", ascending: false)
         } else {
             items = realm.objects(Group.self).sorted(byKeyPath: "absoluteDate", ascending: false)
         }

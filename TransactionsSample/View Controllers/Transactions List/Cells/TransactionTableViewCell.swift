@@ -9,7 +9,7 @@
 import UIKit
 import ChameleonFramework
 
-class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell {
+class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell, NibReusable {
     typealias T = Transaction
     
     /**
@@ -28,6 +28,7 @@ class TransactionTableViewCell: UITableViewCell, Reusable, ConfigurableCell {
     }
 
     func configure(with item: Transaction, at indexPath: IndexPath) {
+
         ibTitleLabel.text = item.descriptionString
         ibSubtitleLabel.text = Transaction.timeFormatter.string(from: item.settlementDate)
         
