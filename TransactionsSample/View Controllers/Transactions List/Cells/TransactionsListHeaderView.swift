@@ -15,11 +15,6 @@ class TransactionsListHeaderView: UITableViewHeaderFooterView, Reusable, NibReus
     @IBOutlet weak var ibTitleLabel: UILabel!
     @IBOutlet weak var ibAmountLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func configure(with item: Group, at index: Int) {
         ibTitleLabel.text = item.date
         
@@ -27,5 +22,10 @@ class TransactionsListHeaderView: UITableViewHeaderFooterView, Reusable, NibReus
         
         ibAmountLabel.text = Transaction.numberFormatter.string(from: totalAmount as NSNumber)
     }
-    
+}
+
+extension TransactionsListHeaderView {
+    class func height() -> CGFloat {
+        return 50
+    }
 }

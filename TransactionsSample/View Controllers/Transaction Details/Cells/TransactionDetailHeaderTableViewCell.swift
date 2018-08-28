@@ -29,7 +29,6 @@ class TransactionDetailHeaderTableViewCell: UITableViewCell, Reusable, Configura
         
         let color = UIColor.flatSkyBlue
         ibCategoryLabel.textColor = color
-        
         ibCategoryLabel.layer.borderColor = color.cgColor
         ibCategoryLabel.layer.borderWidth = 1.0
     }

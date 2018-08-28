@@ -17,17 +17,13 @@ class MapPreviewTableViewCell: UITableViewCell, Reusable, ConfigurableCell  {
     @IBOutlet weak var ibAddressLabel: PaddingLabel!
     @IBOutlet weak var ibMapView: MKMapView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     override func prepareForReuse() {
         ibAddressLabel.text = "Loading..."
     }
     
     func configure(with item: Transaction, at indexPath: IndexPath) {
         if let coordinates = item.coordinates {
+            
             let newPin = MKPointAnnotation()
             newPin.coordinate = coordinates
             ibMapView.addAnnotation(newPin)
