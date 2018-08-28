@@ -29,7 +29,7 @@ enum TransactionCategory: Int, CustomStringConvertible {
     }
 }
 
-class Transaction: RealmSwift.Object, Codable {
+class Transaction: RealmSwift.Object, Decodable {
     
     @objc dynamic var amount: Float = 0
     @objc dynamic var descriptionString: String = ""

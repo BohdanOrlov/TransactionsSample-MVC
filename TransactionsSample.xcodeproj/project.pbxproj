@@ -18,12 +18,14 @@
 		B63A971B213473A900EF162F /* DependencyContainerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A9719213473A900EF162F /* DependencyContainerProtocols.swift */; };
 		B63A971D213473D300EF162F /* ProcessInfo+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A971C213473D300EF162F /* ProcessInfo+Tests.swift */; };
 		B63A97212134A91700EF162F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A97202134A91700EF162F /* Location.swift */; };
+		B63A97232135216000EF162F /* MockingDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A97222135216000EF162F /* MockingDependencyContainer.swift */; };
+		B63A9725213521D400EF162F /* TransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63A9724213521D400EF162F /* TransactionsTests.swift */; };
+		B63A97282135257300EF162F /* Transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = B63A97272135257300EF162F /* Transactions.json */; };
 		B68ABB14212C08D0001D9125 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB13212C08D0001D9125 /* AppDelegate.swift */; };
 		B68ABB16212C08D0001D9125 /* TransactionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */; };
 		B68ABB19212C08D0001D9125 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB17212C08D0001D9125 /* Main.storyboard */; };
 		B68ABB1B212C08D1001D9125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB1A212C08D1001D9125 /* Assets.xcassets */; };
 		B68ABB1E212C08D1001D9125 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68ABB1C212C08D1001D9125 /* LaunchScreen.storyboard */; };
-		B68ABB29212C08D1001D9125 /* TransactionsSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB28212C08D1001D9125 /* TransactionsSampleTests.swift */; };
 		B68ABB34212C08D1001D9125 /* TransactionsSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB33212C08D1001D9125 /* TransactionsSampleUITests.swift */; };
 		B68ABB43212C1984001D9125 /* LootAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB42212C1984001D9125 /* LootAPI.swift */; };
 		B68ABB47212C1CED001D9125 /* LootService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68ABB46212C1CED001D9125 /* LootService.swift */; };
@@ -80,6 +82,9 @@
 		B63A9719213473A900EF162F /* DependencyContainerProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainerProtocols.swift; sourceTree = "<group>"; };
 		B63A971C213473D300EF162F /* ProcessInfo+Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Tests.swift"; sourceTree = "<group>"; };
 		B63A97202134A91700EF162F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		B63A97222135216000EF162F /* MockingDependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockingDependencyContainer.swift; sourceTree = "<group>"; };
+		B63A9724213521D400EF162F /* TransactionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsTests.swift; sourceTree = "<group>"; };
+		B63A97272135257300EF162F /* Transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Transactions.json; sourceTree = "<group>"; };
 		B68ABB10212C08D0001D9125 /* TransactionsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransactionsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68ABB13212C08D0001D9125 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68ABB15212C08D0001D9125 /* TransactionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +93,6 @@
 		B68ABB1D212C08D1001D9125 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B68ABB1F212C08D1001D9125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68ABB24212C08D1001D9125 /* TransactionsSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionsSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B68ABB28212C08D1001D9125 /* TransactionsSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSampleTests.swift; sourceTree = "<group>"; };
 		B68ABB2A212C08D1001D9125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68ABB2F212C08D1001D9125 /* TransactionsSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransactionsSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68ABB33212C08D1001D9125 /* TransactionsSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsSampleUITests.swift; sourceTree = "<group>"; };
@@ -211,6 +215,14 @@
 			path = DependencyContainer;
 			sourceTree = "<group>";
 		};
+		B63A97262135253D00EF162F /* SampleResponses */ = {
+			isa = PBXGroup;
+			children = (
+				B63A97272135257300EF162F /* Transactions.json */,
+			);
+			path = SampleResponses;
+			sourceTree = "<group>";
+		};
 		B68ABB07212C08D0001D9125 = {
 			isa = PBXGroup;
 			children = (
@@ -253,7 +265,8 @@
 		B68ABB27212C08D1001D9125 /* TransactionsSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				B68ABB28212C08D1001D9125 /* TransactionsSampleTests.swift */,
+				B63A97222135216000EF162F /* MockingDependencyContainer.swift */,
+				B63A9724213521D400EF162F /* TransactionsTests.swift */,
 				B68ABB2A212C08D1001D9125 /* Info.plist */,
 			);
 			path = TransactionsSampleTests;
@@ -271,6 +284,7 @@
 		B68ABB41212C1962001D9125 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B63A97262135253D00EF162F /* SampleResponses */,
 				B68ABB42212C1984001D9125 /* LootAPI.swift */,
 				B68ABB46212C1CED001D9125 /* LootService.swift */,
 			);
@@ -448,6 +462,7 @@
 			files = (
 				B63A97142134691400EF162F /* TransactionTableViewCell.xib in Resources */,
 				B68ABB6F212E950B001D9125 /* TransactionsListHeaderView.xib in Resources */,
+				B63A97282135257300EF162F /* Transactions.json in Resources */,
 				B68ABB1E212C08D1001D9125 /* LaunchScreen.storyboard in Resources */,
 				B68ABB1B212C08D1001D9125 /* Assets.xcassets in Resources */,
 				B68ABB19212C08D0001D9125 /* Main.storyboard in Resources */,
@@ -598,7 +613,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68ABB29212C08D1001D9125 /* TransactionsSampleTests.swift in Sources */,
+				B63A9725213521D400EF162F /* TransactionsTests.swift in Sources */,
+				B63A97232135216000EF162F /* MockingDependencyContainer.swift in Sources */,
 				B68ABB68212DB0F2001D9125 /* PaddingLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

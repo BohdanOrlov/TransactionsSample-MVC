@@ -32,10 +32,39 @@ extension LootAPI: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        switch self {
+        case .getTransactions:
+            return Data.stubbedResponse("Transactions")
+        }
     }
     
     var headers: [String: String]? {
         return nil
+    }
+}
+
+extension Data {
+    
+    /**
+     Loads the sample response file from the bundle.
+     **/
+    static func stubbedResponse(_ filename: String) -> Data {
+        @objc class TestClass: NSObject { }
+        
+        let bundle = Bundle(for: TestClass.self)
+        
+        guard let path = bundle.path(forResource: filename, ofType: "json") else {
+            return Data()
+        }
+        
+        do {
+            return try Data(contentsOf: URL(fileURLWithPath: path))
+        } catch {
+            #if DEBUG
+            fatalError("Failed to load stubbed response: \(error.localizedDescription)")
+            #else
+            return Data()
+            #endif
+        }
     }
 }

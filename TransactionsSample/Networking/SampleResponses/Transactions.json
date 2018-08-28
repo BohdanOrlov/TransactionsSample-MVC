@@ -1,0 +1,100 @@
+[
+    {
+        "amount": "-3.95",
+        "authorisation_date": "2016-01-21T12:43:29+00:00",
+        "description": "Marks & Spencer",
+        "location": {
+            "latitude": "51.505530",
+            "longitude": "-0.098169"
+        },
+        "post_transaction_balance": "14.54",
+        "settlement_date": "2016-01-22T10:48:21+00:00"
+    },
+    {
+        "amount": "-23.50",
+        "authorisation_date": "2016-01-03T10:34:56+00:00",
+        "description": "Disney Store",
+        "location": {
+            "latitude": "52.406509",
+            "longitude": "16.933241"
+        },
+        "post_transaction_balance": "18.49",
+        "settlement_date": "2016-01-05T13:45:11+00:00"
+    },
+    {
+        "amount": "-56.89",
+        "authorisation_date": "2015-12-28T18:23:24+00:00",
+        "description": "BT Broadband",
+        "location": null,
+        "post_transaction_balance": "41.99",
+        "settlement_date": "2015-12-30T11:11:40+00:00"
+    },
+    {
+        "amount": "40.00",
+        "authorisation_date": "2015-12-28T09:02:23+00:00",
+        "description": "From Ollie Purdue (34124311 30-62-53)",
+        "location": null,
+        "post_transaction_balance": "98.88",
+        "settlement_date": "2016-01-30T10:48:21+00:00"
+    },
+    {
+        "amount": "-60.34",
+        "authorisation_date": "2015-12-27T18:02:23+00:00",
+        "description": "Nike",
+        "location": {
+            "latitude": "51.515505",
+            "longitude": "-0.141765"
+        },
+        "post_transaction_balance": "58.88",
+        "settlement_date": "2016-12-30T09:41:04+00:00"
+    },
+    {
+        "amount": "-3.00",
+        "authorisation_date": "2015-12-05T19:56:43+00:00",
+        "description": "Marks & Spencer",
+        "location": {
+            "latitude": "51.543319",
+            "longitude": "-0.004957"
+        },
+        "post_transaction_balance": "119.22",
+        "settlement_date": "2015-12-08T09:41:04+00:00"
+    },
+    {
+        "amount": "100",
+        "authorisation_date": "2015-11-24T12:34:30+00:00",
+        "description": "From Ollie Purdue (34124311 30-62-53)",
+        "location": {
+            "latitude": "52.406509",
+            "longitude": "16.933241"
+        },
+        "post_transaction_balance": "122.22",
+        "settlement_date": "2015-11-25T10:01:21+00:00"
+    },
+    {
+        "amount": "-18.60",
+        "authorisation_date": "2015-11-24T10:34:56+00:00",
+        "description": "Asos",
+        "location": null,
+        "post_transaction_balance": "22.22",
+        "settlement_date": "2015-11-25T10:48:21+00:00"
+    },
+    {
+        "amount": "-29.18",
+        "authorisation_date": "2015-11-24T09:43:29+00:00",
+        "description": "Nandos",
+        "location": {
+            "latitude": "51.504038",
+            "longitude": "-0.104424"
+        },
+        "post_transaction_balance": "40.82",
+        "settlement_date": "2016-01-25T10:48:21+00:00"
+    },
+    {
+        "amount": "70",
+        "authorisation_date": "2015-11-15T19:43:29+00:00",
+        "description": "From Ollie Purdue (34124311 30-62-53)",
+        "location": null,
+        "post_transaction_balance": "70",
+        "settlement_date": "2015-11-16T10:48:21+00:00"
+    }
+]

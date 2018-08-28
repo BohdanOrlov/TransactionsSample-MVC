@@ -26,7 +26,7 @@ public class NetworkManager<Target> where Target: TargetType {
         self.provider = MoyaProvider<Target>()
     }
     
-    func request(
+    public func request(
         _ target: Target,
         queue: DispatchQueue? = nil,
         completion completionClosure: ((Result<Data, Moya.MoyaError>) -> Void)? = nil
@@ -109,7 +109,7 @@ public class NetworkManager<Target> where Target: TargetType {
         }
     }
     
-    func requestObject<T: Decodable>(_ type: T.Type,
+    public func requestObject<T: Decodable>(_ type: T.Type,
                                      endpoint: Target,
                                      queue: DispatchQueue = DispatchQueue.main,
                                      completion completionClosure: ((Result<T, Moya.MoyaError>) -> Void)? = nil
@@ -144,10 +144,10 @@ public class NetworkManager<Target> where Target: TargetType {
         }
     }
     
-    func loadTransactions(completion: ((Bool) -> Void)? = nil) {
+    func loadTransactions(service: NetworkManager<LootAPI> = DependencyContainer().makeLootService(), completion: ((Bool) -> Void)? = nil) {
         let getTransactions = LootAPI.getTransactions
         
-        _ = DependencyContainer().makeLootService().requestArray(Transaction.self, endpoint: getTransactions, completion: { (result) in
+        _ = service.requestArray(Transaction.self, endpoint: getTransactions, completion: { (result) in
             switch result {
             case let .success(array):
                 do {
@@ -169,6 +169,7 @@ public class NetworkManager<Target> where Target: TargetType {
                 } catch {
                     Logger.error("Realm error: \(error.localizedDescription)")
                     DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Transaction.Notifications.didFailToFetchTransactions, object: nil)
                         completion?(false)
                     }
                 }
